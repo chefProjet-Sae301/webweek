@@ -1,3 +1,11 @@
+:root{
+	/* couleurs de bases */
+	--bleu-fonce: rgb(35 53 96);
+	--bleu-clair: rgb(105 146 180);
+	--color-text-black: rgb(0 0 0);
+	--color-text-white: rgb(255 255 255);
+}
+
 html,
 body {
 	height: 100%;
@@ -7,13 +15,18 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+	color: var(--bleu-fonce);
+	text-align: center;
+	font-size: xx-large;
+}
 
 /*******************************/
 /*       HEADER & FOOTER       */
 /*******************************/
 
 header, footer {
-	background-color: rgb(35, 53, 96);
+	background-color: var(--bleu-fonce);
 	padding: 0 5vw 0 2vw;
 }
 
@@ -26,7 +39,7 @@ nav a, footer a {
 	padding: 14px 16px;
 	margin-right: 9px;
 	text-decoration: none;
-	color: rgb(255 255 255);
+	color: var(--color-text-white);
 	text-transform: uppercase;
 
 	transition: width 0.3s;
@@ -38,7 +51,7 @@ nav a:not(:first-child)::after {
 	display: block;
 	width: 0;
 	height: 2px;
-	background: #FFFFFF;
+	background: var(--color-text-white);
 	transition: width 0.3s;
 }
 
@@ -48,4 +61,30 @@ nav a:not(:first-child):hover::after {
 
 .videlarge {
 	flex-grow: 1;
+}
+
+
+/********************************/
+/*             FORM             */
+/********************************/
+
+#formulaire {
+	background-color: var(--bleu-clair);
+	padding: 5vw;
+}
+
+form {
+	background-color: var(--color-text-white);
+	border-radius: 30px;
+	padding:2vw;
+}
+
+form div {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+input[type=text], input[type=email], select, textarea{
+	border: solid var(--bleu-clair);
+	border-radius: 5px;
 }
