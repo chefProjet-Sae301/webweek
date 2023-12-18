@@ -2,11 +2,11 @@
 namespace Models;
 use Exception;
 class Equipe{
-    public $numeroEquipe = 0;
-    public $score = 0;
+    public int $numeroEquipe = 0;
+    public int $score = 0;
     public $joueurs = [];
 
-    function __construct($numeroEquipe, $score = 0) {
+    function __construct(int $numeroEquipe, int $score = 0) {
         $this->numeroEquipe = $numeroEquipe;
         $this->score = $score;
     }

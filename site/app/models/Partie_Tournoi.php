@@ -1,18 +1,16 @@
 <?php
 namespace Models;
 class Partie_Tournoi{
-    public $tournoiId = 0;
-    public $equipe1;
-    public $equipe2;
-    public $dateTournoi = "";
-    public $isTryHard = false;
+    public int $tournoiId;
+    public \Models\Equipe $equipe1;
+    public \Models\Equipe $equipe2;
+    public string $dateTournoi;
+    public bool $isTryHard;
 
-    function __construct($tournoiId, $dateTournoi, $isTryHard) {
+    function __construct(int $tournoiId, string $dateTournoi, bool $isTryHard) {
         $this->tournoiId = $tournoiId;
         $this->dateTournoi = $dateTournoi;
         $this->isTryHard = $isTryHard;
-        $this->equipe1 = new Equipe();
-        $this->equipe2 = new Equipe();
     }
 
 
