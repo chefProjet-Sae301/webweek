@@ -154,7 +154,12 @@ input[type="submit"]:hover{
 	cursor: pointer;
 }
 
-input[type="checkbox"]{
-	
+input[type="checkbox"] {
+	accent-color: var(--bleu-clair);
+	height: 15px;
+	width: 15px;
 }
 
+input[type="checkbox"]:hover{
+	accent-color: var(--bleu-clair);
+}
