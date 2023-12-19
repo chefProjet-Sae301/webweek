@@ -73,6 +73,12 @@ nav a:not(:first-child):hover::after {
     padding: 5vw 10vw;
 }
 
+/* admin */
+#formulaire-administration {
+	background-color: var(--bleu-clair);
+    padding: 7vw 30vw;
+}
+
 form {
     background-color: var(--color-text-white);
     border-radius: 30px;
@@ -87,7 +93,6 @@ form {
 
 .groupe-input.ligne-demi{
 	flex-direction: row;
-	flex-wrap: wrap;
 	gap: 4%;
 }
 
@@ -104,7 +109,7 @@ label {
 	margin-bottom: 0.5em;
 }
 
-input[type="text"], input[type="email"], select, textarea {
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
     border: 2px solid var(--bleu-clair);
     border-radius: 20px;
     width: 100%;
@@ -132,6 +137,7 @@ form p {
 }
 
 input[type="submit"]{
+	margin-top: 1em;
 	padding: 1% 10% ;
 	background-color: var(--bleu-clair) !important;
 	color: var(--color-text-white);
@@ -147,3 +153,8 @@ input[type="submit"]:hover{
 	background-color: var(--bleu-fonce) !important;
 	cursor: pointer;
 }
+
+input[type="checkbox"]{
+	
+}
+

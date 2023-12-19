@@ -14,45 +14,23 @@
 	<?php
 	include("commun/header.php")
 	?>
-		<section id="formulaire">
+		<section id="formulaire-administration">
 		<form>
-			<h1>Formulaire</h1>
-
-			<div class="groupe-input ligne-demi">
-				<div class="half-width">
-					<label for="nom">Nom *</label>
-					<input type="text" name="nom" id="nom" required />
-				</div>
-				<div class="half-width">
-					<label for="prenom">Prénom *</label>
-					<input type="text" name="prenom" id="prenom" required />
-				</div>
-			</div>
-
+			<h1>Administration</h1>
 			
 			<div class="groupe-input ligne-entiere">
-            <label for="email">Adresse E-mail *</label>
-            <input type="email" name="email" id="email" required />
-        </div>
+                <label for="login">Login</label>
+                <input type="text" name="login" id="login" required />
+            </div>
 
-        <div class="groupe-input ligne-entiere">
-            <label for="choix">Voulez-vous vendre ou voulez-vous participer au tournoi ?</label>
-            <select name="choix" id="choix">
-                <option value="tournoi">Je souhaite participer au tournoi</option>
-                <option value="vente">Je souhaite vendre durant l'évènement</option>
-            </select>
-        </div>
+			<div class="groupe-input ligne-entiere">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" name="mdp" id="mdp" required />
+            </div>
 
-        <div class="groupe-input ligne-entiere">
-            <label for="equipe">Si vous souhaitez participer au tournoi, dîtes-nous avec qui si vous avez déjà une équipe ? (* si vous participez au tournoi)</label>
-            <textarea id="equipe"></textarea>
-        </div>
+            <input type="checkbox" onclick="montrerMotdePasse()">Montrer le mot de passe
 
-        <p>Après avoir reçu votre demande d’inscription, nous vous renverrons un mail pour vous demander plus de détails ou valider votre inscription.</p>
-
-		<div id="submit-div"><input type="submit" value="Envoyer" /></div>
-        
-
+            <div id="submit-div"><input type="submit" value="Connexion" /></div>
 		</form>
 	</section>
 	
@@ -60,6 +38,17 @@
 	<?php
 	include("commun/footer.php")
 	?>
+
+    <script>
+        function montrerMotdePasse() {
+            var x = document.getElementById("mdp");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 
 </html>

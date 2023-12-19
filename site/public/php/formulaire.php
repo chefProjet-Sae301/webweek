@@ -31,28 +31,26 @@
 
 			
 			<div class="groupe-input ligne-entiere">
-            <label for="email">Adresse E-mail *</label>
-            <input type="email" name="email" id="email" required />
-        </div>
+				<label for="email">Adresse E-mail *</label>
+				<input type="email" name="email" id="email" required />
+			</div>
 
-        <div class="groupe-input ligne-entiere">
-            <label for="choix">Voulez-vous vendre ou voulez-vous participer au tournoi ?</label>
-            <select name="choix" id="choix">
-                <option value="tournoi">Je souhaite participer au tournoi</option>
-                <option value="vente">Je souhaite vendre durant l'évènement</option>
-            </select>
-        </div>
+			<div class="groupe-input ligne-entiere">
+				<label for="choix">Voulez-vous vendre ou voulez-vous participer au tournoi ?</label>
+				<select name="choix" id="choix">
+					<option value="tournoi">Je souhaite participer au tournoi</option>
+					<option value="vente">Je souhaite vendre durant l'évènement</option>
+				</select>
+			</div>
 
-        <div class="groupe-input ligne-entiere">
-            <label for="equipe">Si vous souhaitez participer au tournoi, dîtes-nous avec qui si vous avez déjà une équipe ? (* si vous participez au tournoi)</label>
-            <textarea id="equipe"></textarea>
-        </div>
+			<div class="groupe-input ligne-entiere">
+				<label for="equipe">Si vous souhaitez participer au tournoi, dîtes-nous avec qui si vous avez déjà une équipe ? (* si vous participez au tournoi)</label>
+				<textarea id="equipe"></textarea>
+			</div>
 
-        <p>Après avoir reçu votre demande d’inscription, nous vous renverrons un mail pour vous demander plus de détails ou valider votre inscription.</p>
+			<p>Après avoir reçu votre demande d’inscription, nous vous renverrons un mail pour vous demander plus de détails ou valider votre inscription.</p>
 
-		<div id="submit-div"><input type="submit" value="Envoyer" /></div>
-        
-
+			<div id="submit-div"><input type="submit" value="Envoyer" /></div>
 		</form>
 	</section>
 	
