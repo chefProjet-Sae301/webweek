@@ -1,5 +1,5 @@
 <?php
-require('vendor/autoload.php');
+require('../../vendor/autoload.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,8 @@ require('vendor/autoload.php');
 	<?php
 	include("commun/header.php")
 	?>
-		<section id="formulaire-administration">
+
+	<section id="formulaire-administration">
 		<form>
 			<h1>Administration</h1>
 			

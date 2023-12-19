@@ -1,5 +1,5 @@
 <?php
-require('vendor/autoload.php');
+require('../../vendor/autoload.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +18,17 @@ require('vendor/autoload.php');
 	<?php
 	include("commun/header.php")
 	?>
-		<section id="formulaire">
+
+	<section id="formulaire">
 		<form>
 			<h1>Formulaire</h1>
 
 			<div class="groupe-input ligne-demi">
-				<div class="half-width">
+				<div class="demi-ligne">
 					<label for="nom">Nom *</label>
 					<input type="text" name="nom" id="nom" required />
 				</div>
-				<div class="half-width">
+				<div class="demi-ligne">
 					<label for="prenom">Prénom *</label>
 					<input type="text" name="prenom" id="prenom" required />
 				</div>
