@@ -69,22 +69,81 @@ nav a:not(:first-child):hover::after {
 /********************************/
 
 #formulaire {
-	background-color: var(--bleu-clair);
-	padding: 5vw;
+    background-color: var(--bleu-clair);
+    padding: 5vw 10vw;
 }
 
 form {
-	background-color: var(--color-text-white);
-	border-radius: 30px;
-	padding:2vw;
+    background-color: var(--color-text-white);
+    border-radius: 30px;
+    padding: 2vw;
 }
 
-form div {
-	display: flex;
+.groupe-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.groupe-input.ligne-demi{
+	flex-direction: row;
 	flex-wrap: wrap;
+	gap: 4%;
 }
 
-input[type=text], input[type=email], select, textarea{
-	border: solid var(--bleu-clair);
-	border-radius: 5px;
+.half-width {
+	width: 48%;
+}
+
+.groupe-input.ligne-entiere {
+    width: 100%;
+}
+
+label {
+    font-weight: 500;
+	margin-bottom: 0.5em;
+}
+
+input[type="text"], input[type="email"], select, textarea {
+    border: 2px solid var(--bleu-clair);
+    border-radius: 20px;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+	height: 40px;
+}
+
+select {
+	text-transform: uppercase;
+	font-size: medium;
+}
+
+textarea {
+	height: 100px;
+}
+
+form p {
+	font-weight: lighter;
+	font-size: small;
+}
+
+#submit-div, form p {
+	text-align: center;
+}
+
+input[type="submit"]{
+	padding: 1% 10% ;
+	background-color: var(--bleu-clair) !important;
+	color: var(--color-text-white);
+	font-size: x-large;
+	font-weight: bold;
+
+	border: none;
+    border-radius: 20px;
+	text-transform: uppercase;
+}
+
+input[type="submit"]:hover{
+	background-color: var(--bleu-fonce) !important;
+	cursor: pointer;
 }
