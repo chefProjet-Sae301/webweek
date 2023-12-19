@@ -11,7 +11,7 @@ require('../../vendor/autoload.php');
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
 
-	<title>Noël des Chimères</title>
+	<title>Formulaire</title>
 </head>
 
 <body>

@@ -66,6 +66,126 @@ nav a:not(:first-child):hover::after {
 	flex-grow: 1;
 }
 
+/*******************************/
+/*         ASSOCIATION         */
+/*******************************/
+
+.association-partie {
+	display: flex;
+	gap: 3%;
+	margin: 4em 20vw;
+}
+
+.association-partie article {
+	display: flex;
+	flex-direction: column;
+}
+
+section img {
+	height: 40vh;
+}
+
+#association-membres {
+	background-color: var(--bleu-clair);
+	display: flex;
+	flex-direction: column;
+}
+
+.img-membres {
+	width: 9vw;
+	height: auto;
+	border-radius: 50%;
+}
+
+.ligne-membres {
+	display: flex;
+	justify-content: space-around;
+	margin: 1rem 5rem;
+}
+
+.association-citation {
+	display: flex;
+	gap: 5%;
+	margin: 4em 20vw;
+}
+
+.association-citation article {
+	display: flex;
+	align-items: center;
+}
+
+#association-galerie {
+	background-color: var(--bleu-clair);
+	display: flex;
+	flex-direction: column;
+	padding: 3rem;
+}
+
+#association-galerie h2 {
+	display: flex;
+	justify-content: center;
+}
+
+#association-galerie div {
+	display: flex;
+	justify-content: space-around;
+}
+
+.expo-membres {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.photoGalerie {
+	height: 15vw;
+	margin: 0 6rem;
+}
+
+@media (max-width: 900px) {
+
+	.association-partie {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.association-partie h1 {
+		margin: 2rem 0 1rem;
+	}
+
+	section img {
+		height: 35vh;
+		height: auto;
+	}
+
+	.ligne-membres {
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+
+	.img-membres {
+		width: 25vw;
+	}
+
+	.association-citation {
+		flex-direction: column;
+	}
+	
+	.association-citation article {
+		text-align: center;
+	}
+	
+	#association-galerie div {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.photoGalerie {
+		width: 30vw;
+		height: auto;
+	}
+}
 
 /********************************/
 /*             FORM             */
@@ -191,4 +311,16 @@ input[type="checkbox"]:hover {
 	.groupe-input.ligne-demi .demi-ligne:not(:first-child) {
 		margin-top: 30px;
 	}
+}
+
+/********************************/
+/*             JEUX             */
+/********************************/
+
+aside{
+	float: left;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	width: 30%;
+	height: 300px;
 }

@@ -22,18 +22,15 @@ require('vendor/autoload.php');
 			<!-- barre de navigation -->
 			<a href="index.php"><img src="public/php/commun/logo.png" alt="Logo Noël des Chimères" height="60px"></a>
 			<div class="videlarge"></div>
-			<a href="index.php">Accueil</a>
+			<a href="public/php/association.php">Association</a>
 			<a href="index.php">Tournoi</a>
-			<a href="index.php">Jeux</a>
+			<a href="public/php/jeux.php">Jeux</a>
 			<a href="public/php/formulaire.php">Inscription</a>
 
 		</nav>
 		
 	</header>
 		
-	<main>
-		
-	</main>
 
 	<footer>
 		<article>
