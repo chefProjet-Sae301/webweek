@@ -25,10 +25,10 @@ h1 {
 /*       HEADER & FOOTER       */
 /*******************************/
 
-#test {
+#plan-du-site-footer {
 	position: absolute;
 	bottom: 0;
-	width: 93vw;
+	width: 100vw;
 }
 
 header,
@@ -37,14 +37,13 @@ footer {
 	padding: 0 5vw 0 2vw;
 }
 
-nav,
+.nav,
 footer article {
 	display: flex;
 	align-items: center;
 }
 
-nav a,
-footer a {
+footer a, .nav-link {
 	padding: 14px 16px;
 	margin-right: 9px;
 	text-decoration: none;
@@ -55,7 +54,7 @@ footer a {
 	-webkit-transition: width 0.3s;
 }
 
-nav a:not(:first-child)::after {
+.nav-link::after {
 	content: '';
 	display: block;
 	width: 0;
@@ -64,7 +63,7 @@ nav a:not(:first-child)::after {
 	transition: width 0.3s;
 }
 
-nav a:not(:first-child):hover::after {
+.nav-link:hover::after {
 	width: 100%;
 }
 
@@ -345,6 +344,10 @@ aside{
 /*         PLAN DU SITE         */
 /********************************/
 
+#liste {
+	margin: 50px 0;
+}
+
 #liste a {
 	text-decoration : none;
 	color: var(--color-text-black);
@@ -356,4 +359,33 @@ aside{
 
 #liste li {
 	margin: 2vw;
+}
+
+/********************************/
+/*       MENTIONS LEGALES       */
+/********************************/
+
+#mentions {
+	margin: 50px 30vw;
+	text-align: justify center;
+}
+
+#mentions h2 {
+	font-style: italic;
+	color: var(--bleu-clair);
+	text-align: center;
+	font-size:large;
+	margin-top: 50px;
+}
+
+#mentions span p {
+	color: var(--bleu-clair);
+	text-align: center;
+}
+
+@media (max-width: 1280px) {
+
+	#mentions {
+		margin: 50px 15vw;
+	}
 }

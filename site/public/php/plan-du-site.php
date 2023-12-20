@@ -6,18 +6,24 @@ require('../../vendor/autoload.php');
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-	<title>Les jeux</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+
+    <link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
+
+    <title>Les jeux</title>
 </head>
 
 <body>
-	<?php
-	include("commun/header.php")
-	?>
+    <?php
+    include("commun/header.php")
+    ?>
 
     <section id="liste">
         <h1>Liste des pages</h1>
@@ -32,7 +38,7 @@ require('../../vendor/autoload.php');
         </ul>
     </section>
 
-    <footer id="test">
+    <footer id="plan-du-site-footer">
         <article>
             <a href="https://www.facebook.com/LeTempsDesChimeres/"><img src="commun/facebook.png" height="20px" alt="réseau social Facebook de l'association"></a>
             <a href="https://www.instagram.com/letempsdeschimeres43/"><img src="commun/instagram.png" height="20px" alt="réseau social Instagram de l'association"></a>
