@@ -6,7 +6,7 @@ class Partie_TournoiController{
         $db = \BDD\Database::getInstance();
         $equipeController = new \Controllers\EquipeController();
         $statement = 'SELECT * FROM PARTIE_TOURNOI '.$condition;
-        $results = $db->query($statement);
+        $results = $db->GetQuery($statement);
         $parties_tournois = [];
         foreach ($results as $result) {
             $partie_tournoi = new \Models\Partie_Tournoi(

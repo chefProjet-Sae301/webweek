@@ -43,7 +43,11 @@ class Database{
         return $this->pdo;
     }
 
-    public function query($statement){
+    public function Query($statement){
+        $query = $this->getPDO()->prepare($statement);
+        $query->execute();
+    }
+    public function GetQuery($statement){
         $query = $this->getPDO()->prepare($statement);
         $query->execute();
         $datas = $query->fetchAll(PDO::FETCH_ASSOC);
