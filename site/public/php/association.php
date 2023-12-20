@@ -31,7 +31,7 @@ require('../../vendor/autoload.php');
 	include("commun/header.php")
 	?>
 
-	<section class="association-partie">
+	<section id="association-partie">
 		<img src="../img/association/noe.webp">
 		<article>
 			<h1>Noé</h1>

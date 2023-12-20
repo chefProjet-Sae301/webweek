@@ -75,15 +75,23 @@ footer a, .nav-link {
 /*         ASSOCIATION         */
 /*******************************/
 
-.association-partie {
+#association-partie {
 	display: flex;
 	gap: 3%;
 	margin: 4em 20vw;
 }
 
-.association-partie article {
+#association-partie article {
 	display: flex;
 	flex-direction: column;
+}
+
+#association-partie p, .association-citation p {
+	padding: 3em 5em;
+}
+
+#association-partie h1 {
+	padding: 20px 0 0 0;
 }
 
 section img {
@@ -92,6 +100,7 @@ section img {
 
 #association-membres {
 	background-color: var(--bleu-clair);
+	padding: 2em 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -148,13 +157,17 @@ section img {
 
 @media (max-width: 900px) {
 
-	.association-partie {
+	#association-partie {
 		display: flex;
 		flex-direction: column;
 	}
 
-	.association-partie h1 {
+	#association-partie h1 {
 		margin: 2rem 0 1rem;
+	}
+
+	#association-partie p, .association-citation p {
+		padding: 0 0;
 	}
 
 	section img {
@@ -388,6 +401,3 @@ aside{
 		margin: 50px 15vw;
 	}
 }
-
-/***************************************/
-
