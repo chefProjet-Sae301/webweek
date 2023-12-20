@@ -2,15 +2,58 @@
 use Controllers\JeuController;
 
 session_start();
-if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
-    header('Location: formulaire.php');
+if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
+    header('Location: login.php');
     exit();
-} else {
-    //$_SESSION["login"]=$_POST["login"];
-    //$_SESSION["mdp"]=$_POST["mdp"];
 }
+;
 $jeuController = new JeuController();
 $jeux = $jeuController->GetJeux();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer'])) {
+    $jeu = $_POST['jeuId'];
+    $jeuId = explode(';', $jeu)[0];
+    $UorD = $_POST['UorD'];
+    $nomJeu = $_POST['nomJeu'];
+    $description = $_POST['description'];
+
+    $tmpNameImg = $_FILES['imgJeu']['tmp_name'];
+    $nameImg = $_FILES['imgJeu']['name'];
+    $sizeImg = $_FILES['imgJeu']['size'];
+    $errorImg = $_FILES['imgJeu']['error'];
+    $typeImg = $_FILES['imgJeu']['type'];
+    move_uploaded_file($tmpNameImg, '../../img/' . $nameImg); 
+
+    if ($UorD == "supprimer") {
+        $jeuController->DeleteJeu($jeuId);
+        header("Location: $_SERVER[PHP_SELF]");
+        exit;
+    } else if ($UorD == "modifier") {
+        $jeuController->UpdateJeu($jeuId, $nomJeu, $description, '../../img/' . $nameImg);
+/*         header("Location: $_SERVER[PHP_SELF]");
+        exit; */
+    }
+
+
+}
+
+// Traitement du deuxième formulaire "Créer"
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
+    $C_nomJeu = $_POST['C_nomJeu'];
+    $C_description = $_POST['C_description'];
+
+    $C_tmpNameImg = $_FILES['C_imgJeu']['tmp_name'];
+    $C_nameImg = $_FILES['C_imgJeu']['name'];
+    $C_sizeImg = $_FILES['C_imgJeu']['size'];
+    $C_errorImg = $_FILES['C_imgJeu']['error'];
+    $C_typeImg = $_FILES['C_imgJeu']['type'];
+    move_uploaded_file($C_tmpNameImg, '../../img/' . $C_nameImg);
+
+    $jeuController->CreateJeu($C_nomJeu, $C_description, '../../img/' . $C_nameImg);
+    header("Location: $_SERVER[PHP_SELF]");
+    exit;
+}
+
 
 ?>
 
@@ -48,19 +91,79 @@ $jeux = $jeuController->GetJeux();
     </div>
     <div class="contenu">
         <h2>Jeux :</h2>
-        <div>
-            <form action="" method="post">
+        <div style="display: flex">
+
+            <form action="administrationJeux.php" method="post" enctype='multipart/form-data'>
+                <h3>Modifier / Supprimer</h3>
                 <select name="jeuId">
-                    <option value="">--selectionne un jeu --</option>
+                    <option value="">-- Sélectionne un jeu --</option>
                     <?php foreach ($jeux as $jeu) { ?>
-                        <option value="<?php echo $jeu->jeuId?>"><?php echo $jeu->nom?></option>
+                        <option value="<?php echo "{$jeu->jeuId};{$jeu->nom};{$jeu->lien_image};{$jeu->description}" ?>">
+                            <?php echo $jeu->nom ?>
+                        </option>
                     <?php } ?>
-                    <div>
-                        <input type="radio" name="UorD"> modifier
-                        <input type="radio" name="UorD"> supprimer
-                    </div>
                 </select>
+                <div id="modifierSupprimer">
+                    <input type="radio" name="UorD" value="modifier"> Modifier
+                    <input type="radio" name="UorD" value="supprimer"> Supprimer
+                </div>
+                <div id="champsJeu">
+                    <span>
+                        <label for="nomJeu">Nom</label>
+                        <input type="text" name="nomJeu" id="nomJeu" value="">
+                        <input type="file" id="imgJeu" name="imgJeu" accept="image/png, image/jpeg" />
+                    </span>
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                </div>
+
+                <input type="submit" value="Envoyer" id="submitJeu" name="modifierSupprimer">
+            </form>
+            
+            <form action="" method="post" enctype='multipart/form-data'>
+                <h3>Créer</h3>
+                <span>
+                    <label for="C_nomJeu">Nom</label>
+                    <input type="text" name="C_nomJeu" id="C_nomJeu" value="">
+                    <input type="file" id="C_imgJeu" name="C_imgJeu" accept="image/png, image/jpeg" />
+                </span>
+                <label for="C_description">Description</label>
+                <textarea name="C_description" id="C_description" cols="30" rows="10"></textarea>
+
+                <input type="submit" value="Créer" id="submitJeu" name="creer">
             </form>
         </div>
-
     </div>
+</body>
+
+<script>
+    document.getElementById('modifierSupprimer').style.display = 'none';
+    document.getElementById('champsJeu').style.display = 'none';
+    document.querySelector('[name="jeuId"]').addEventListener('change', function (event) {
+        var selectedOptionValue = event.target.value;
+        var values = selectedOptionValue.split(';');
+
+        document.getElementById('nomJeu').value = values[1] != null ? values[1] : "";
+        document.getElementById('description').value = values[3] != null ? values[3] : "";
+
+        if (selectedOptionValue === "") {
+            document.getElementById('modifierSupprimer').style.display = 'none';
+            document.getElementById('champsJeu').style.display = 'none';
+            document.getElementById('submitJeu').style.display = 'none';
+        } else {
+            document.getElementById('modifierSupprimer').style.display = 'block';
+            document.getElementById('submitJeu').style.display = 'block';
+        }
+    });
+
+    document.querySelectorAll('[name="UorD"]').forEach(function (radio) {
+        radio.addEventListener('change', function (event) {
+            var supprimerChecked = document.querySelector('[name="UorD"]:checked').value === "supprimer";
+            if (supprimerChecked) {
+                document.getElementById('champsJeu').style.display = 'none';
+            } else {
+                document.getElementById('champsJeu').style.display = 'block';
+            }
+        });
+    });
+</script>

@@ -50,7 +50,7 @@ if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
 			
 			<div class="groupe-input ligne-entiere">
                 <label for="login">Login</label>
-                <input type="text" value="login" name="login" id="login" required />
+                <input type="text" name="login" id="login" required />
             </div>
 
 			<div class="groupe-input ligne-entiere">

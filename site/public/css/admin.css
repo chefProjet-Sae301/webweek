@@ -1,25 +1,33 @@
+:root {
+	/* couleurs de bases */
+	--bleu-fonce: rgb(35 53 96);
+	--bleu-clair: rgb(105 146 180);
+	--color-text-black: rgb(0 0 0);
+	--color-text-white: rgb(255 255 255);
+}
+
 *{
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    display: flex;
-}
 .menuAdmin{
     background-color: var(--bleu-fonce);
     min-width: min-content;
     width: 15vw;
     color: var(--color-text-white) !important;
     /*min-height: 100vh;*/
-    height: fit-content;
+    height: 100vh;
+    position: fixed;
 }
 
 .menuAdmin h1 {
     color: var(--color-text-white) !important;
     border-bottom: solid 1px var(--color-text-white);
     padding: 2rem 0;
+    text-align: center;
+	font-size: xx-large;
 }
 
 .menuAdmin ul{
@@ -40,12 +48,22 @@ body{
     text-decoration: underline;
 }
 
+.deconnexion_form{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+}
+
 .contenu {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem calc(2rem + 15vw);
 }
 
 table, tr, td{
     border-collapse: collapse;
+}
+
+table{
+    width: 100%;
 }
 
 #equipe_table td, #parties_table td{
@@ -59,3 +77,4 @@ table, tr, td{
     margin: 0rem  2rem;
     text-align: left;
 }
+

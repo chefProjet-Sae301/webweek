@@ -33,19 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <script src="../js/popup.js"></script>
     <title>Noël des Chimères - Administration</title>
 </head>
 
-<body>
+<body>           
+
     <div class="menuAdmin">
         <span class>
             <h1>Admin</h1>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <input type="submit" name="logout" value="Déconnexion">
-        </form>
+
+        
         </span>
         <ul>
             <li class="active">
@@ -141,5 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
             </tbody>
 
         </table>
-
+     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
+            <input type="submit" name="logout" value="Déconnexion">
+        </form>
     </div>

@@ -2,13 +2,10 @@
 use Controllers\Partie_TournoiController;
 
 session_start();
-if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
-    header('Location: formulaire.php');
+if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
+    header('Location: login.php');
     exit();
-} else {
-    //$_SESSION["login"]=$_POST["login"];
-    //$_SESSION["mdp"]=$_POST["mdp"];
-}
+};
 $partiesController = new Partie_TournoiController();
 $parties = $partiesController->GetParties_Tournois();
 

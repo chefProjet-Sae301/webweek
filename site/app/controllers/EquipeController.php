@@ -65,7 +65,6 @@ class EquipeController
         $equipe = $this->GetEquipe($numeroEquipe)[0];
         $joueurController = new \Controllers\JoueurController();
         if (isset($equipe->joueurs[0])) {
-            echo "par là";
             $joueurController->deleteJoueur($equipe->joueurs[0]->personneId);
         };
         if (isset($equipe->joueurs[1])) {

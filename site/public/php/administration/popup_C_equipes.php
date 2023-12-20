@@ -19,7 +19,7 @@ use \Controllers\EquipeController, \Controllers\JoueurController;
         ];
         $joueurController = new JoueurController();
         $joueurController->CreateJoueur($joueur1);
-        //echo "<script>window.opener.location.reload();window.close();</script>";
+        echo "<script>window.opener.location.reload();window.close();</script>";
     }
 ?>
 
