@@ -199,7 +199,7 @@ section img {
 /* admin */
 #formulaire-administration {
 	background-color: var(--bleu-clair);
-	padding: 7vw 0;
+	padding: 8vw 0;
 }
 
 #formulaire-modifetadd h2 {
@@ -207,9 +207,6 @@ section img {
 	color: var(--bleu-clair);
 	text-align: center;
 }
-
-
-
 
 /* fin admin */
 

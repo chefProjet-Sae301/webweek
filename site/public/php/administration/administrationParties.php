@@ -12,6 +12,13 @@ if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
 $partiesController = new Partie_TournoiController();
 $parties = $partiesController->GetParties_Tournois();
 
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
+    $tournoiId = $_POST['deletePartie'];
+    $partiesController->DeletePartie($tournoiId);
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
+}
+
 ?>
 
 
@@ -42,19 +49,18 @@ $parties = $partiesController->GetParties_Tournois();
                 
             </li>
             <li>
-                Jeux
+            <a href="administrationJeux.php">Jeux</a>
             </li>
         </ul>
     </div>
     <div class="contenu">
-        <h2>Equipes :</h2>
+        <h2>Parties :</h2>
         <table id="parties_table">
             <thead>
                 <td>ID</td>
                 <td>Date</td>
                 <td>Équipe 1</td>
                 <td>Équipe 2</td>
-                <td>Catégorie</td>
                 <td style="border:none;"></td>
             </thead>
             <tbody>
@@ -64,7 +70,13 @@ $parties = $partiesController->GetParties_Tournois();
                         <td><?php echo $partie->dateTournoi; ?></td>
                         <td><?php echo $partie->equipe1->numeroEquipe; ?></td>
                         <td><?php echo $partie->equipe2->numeroEquipe; ?></td>
-                        <td><?php echo $partie->isTryHard == true ? "Try Hard" : "Chill"; ?></td>
+                        <td>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette partie ?');">
+                                <input type="hidden" name="deletePartie" value="<?php echo $partie->tournoiId; ?>">
+                                <input type="submit" value="delete">
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
