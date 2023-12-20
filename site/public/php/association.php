@@ -29,73 +29,76 @@ require('../../vendor/autoload.php');
 	?>
 
     <section class="association-partie">
-        <img src="../../../../download.jpg">
+        <img src="../img/association/noe.webp">
         <article>
-            <h1>Nom du président</h1>
+            <h1>Noé</h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Mi eget mauris pharetra et ultrices. Quis ipsum suspendisse ultrices gravida dictum fusce. Diam phasellus vestibulum lorem sed risus ultricies. Ut consequat semper viverra nam libero justo laoreet sit amet. Amet venenatis urna cursus eget. Metus dictum at tempor commodo ullamcorper a lacus. Est ultricies integer quis auctor elit. </p>
+            <p>Notre président Noé soutient l’association depuis sa création il y a plus de 10 ans, de ces balbutiements jusqu’aux grands projets actuels. Personne ne nous représente mieux que lui en mêlant passions, jeux, travail. </p>
         </article>
     </section>
 
     <section id="association-membres">
         <div class="ligne-membres">
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/noe.webp">
+                <p>Noé</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/paul.webp">
+                <p>Paul</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/clara.webp">
+                <p>Clara</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/clelie.webp">
+                <p>Clélie</p>
             </div>
         </div>
         <div class="ligne-membres">
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/augustin.webp">
+                <p>Augustin</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/camille.webp">
+                <p>Camille</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/thomas.webp">
+                <p>Thomas</p>
             </div>
             <div class="expo-membres">
-                <img class="img-membres" src="../../../../download.jpg">
-                <p>Nom</p>
+                <img class="img-membres" alt="membre de l'association" src="../img/association/titouan.webp">
+                <p>Titouan</p>
             </div>
         </div>
     </section>
 
     <section class="association-citation">
         <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Mi eget mauris pharetra et ultrices. Quis ipsum suspendisse ultrices gravida dictum fusce.</p>
+            <p>L’édition 2019 de notre salon du jeu, celle qui passait un cap en termes de taille, d’activité et de publics.</p>
         </article>
-        <img src="../../../../download.jpg">
+        <img src="../img/association/asso2019.webp">
     </section>
 
     <section id="association-galerie">
         <h2>Galerie</h2>
+        
         <div class="photoGalerie">
-            <img class="photoGalerie" src="../../../../download.jpg" alt="">
-            <img class="photoGalerie" src="../../../../download.jpg" alt="">
-            <img  class="photoGalerie"src="../../../../download.jpg" alt="">
+        <div><img class="photoGalerie" src="../../../../download.jpg" alt=""></div>
+        <div><img class="photoGalerie" src="../../../../download.jpg" alt=""></div>
+        <div><img class="photoGalerie" src="../../../../download.jpg" alt=""></div>
+        <div><img class="photoGalerie" src="../../../../download.jpg" alt=""></div>
+        <div><img class="photoGalerie" src="../../../../download.jpg" alt=""></div>
         </div>
     </section>
 
     <section class="association-citation">
-        <img src="../../../../download.jpg">
+        <img src="../img/association/asso2023.webp">
         <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus. Malesuada pellentesque elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed arcu non odio euismod. Mi eget mauris pharetra et ultrices. Quis ipsum suspendisse ultrices gravida dictum fusce.</p>
+            <p>Notre dernière édition, ou vous étiez plus de 1500 sans compter les entré en passe week-end ! Merci à vous, aux bénévoles et tous ceux qui ont rendu cela possible.</p>
         </article>
     </section>
 
