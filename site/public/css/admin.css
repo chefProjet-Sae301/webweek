@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+}
+.menuAdmin{
+    background-color: var(--bleu-fonce);
+    min-width: min-content;
+    width: 15vw;
+    color: var(--color-text-white) !important;
+    /*min-height: 100vh;*/
+    height: fit-content;
+}
+
+.menuAdmin h1 {
+    color: var(--color-text-white) !important;
+    border-bottom: solid 1px var(--color-text-white);
+    padding: 2rem 0;
+}
+
+.menuAdmin ul{
+    margin: 1rem  2rem;
+    list-style: none;
+}
+
+.menuAdmin li {
+    margin: 2rem 0;
+}
+
+.menuAdmin li a {
+    color: var(--color-text-white);
+    text-decoration: none;
+}
+
+.menuAdmin .active{
+    text-decoration: underline;
+}
+
+.contenu {
+    padding: 2rem;
+}
+
+table, tr, td{
+    border-collapse: collapse;
+}
+
+#equipe_table td, #parties_table td{
+    border: solid 1px var(--bleu-fonce);
+    padding: 1rem;
+    text-align: center;
+}
+
+.joueur_ul{
+    list-style: none;
+    margin: 0rem  2rem;
+    text-align: left;
+}
