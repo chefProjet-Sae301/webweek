@@ -199,8 +199,19 @@ section img {
 /* admin */
 #formulaire-administration {
 	background-color: var(--bleu-clair);
-	padding: 7vw 30vw;
+	padding: 7vw 0;
 }
+
+#formulaire-modifetadd h2 {
+	font-style: italic;
+	color: var(--bleu-clair);
+	text-align: center;
+}
+
+
+
+
+/* fin admin */
 
 form {
 	background-color: var(--color-text-white);
@@ -237,6 +248,8 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
+input[type="date"],
 select,
 textarea {
 	border: 2px solid var(--bleu-clair);
