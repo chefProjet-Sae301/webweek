@@ -132,7 +132,6 @@ section img {
 }
 
 #association-galerie div {
-	display: flex;
 	justify-content: space-around;
 }
 
@@ -389,3 +388,6 @@ aside{
 		margin: 50px 15vw;
 	}
 }
+
+/***************************************/
+
