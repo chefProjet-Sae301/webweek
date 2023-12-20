@@ -6,8 +6,8 @@
 		<div class="videlarge"></div>
         <a href="../../index.php">Accueil</a>
         <a href="../../index.php">Tournoi</a>
-        <a href="../../index.php">Jeux</a>
-        <a href="../../index.php">Inscription</a>
+        <a href="jeux.php">Jeux</a>
+        <a href="formulaire.php">Inscription</a>
 
 	</nav>
 	
