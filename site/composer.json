@@ -1,0 +1,11 @@
+{
+    "name": "sae/site",
+    "autoload": {
+        "psr-4": { 
+            "Models\\": "app/models", 
+            "BDD\\": "app/bdd",
+            "Controllers\\" : "app/controllers"
+        }
+    },
+    "require": {}
+}
