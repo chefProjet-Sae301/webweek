@@ -5,7 +5,7 @@ class JeuController{
     public function GetJeux($condition = "") {
         $db = \BDD\Database::getInstance();
         $statement = 'SELECT * FROM JEU '.$condition;
-        $results = $db->query($statement);
+        $results = $db->GetQuery($statement);
         $jeux = [];
         foreach ($results as $result) {
             $jeu = new \Models\Jeu(
