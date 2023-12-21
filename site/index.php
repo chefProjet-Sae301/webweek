@@ -10,7 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
 
-    <script src="public/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="public/js/script-accueil.js"></script>
+    <script src="public/js/carousel.js"></script> 
+
 
 
     <title>Noël des Chimères</title>
@@ -107,6 +114,19 @@
                 <img src="public/img/mille-sabord.webp" alt="Description de l'image">
             </div>
         </div>
+        <section id="association-galerie">
+            <h2>Galerie</h2>
+            <div class="owl-carousel owl-theme">
+                <div class="item"><img src="public/img/1.webp" alt=""></div>
+                <div class="item"><img src="public/img/2.webp" alt=""></div>
+                <div class="item"><img src="public/img/3.webp" alt=""></div>
+                <div class="item"><img src="public/img/4.webp" alt=""></div>
+                <div class="item"><img src="public/img/5.webp" alt=""></div>
+                <div class="item"><img src="public/img/6.webp" alt=""></div>
+                <div class="item"><img src="public/img/7.webp" alt=""></div>
+                <div class="item"><img src="public/img/8.webp" alt=""></div>
+            </div>
+        </section>
             <div class="title"><h2>Classement</h2></div>
         <div class="container-tableau">
 
