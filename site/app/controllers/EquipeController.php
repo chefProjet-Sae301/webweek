@@ -43,13 +43,14 @@ class EquipeController
         }
     }
 
-    function CreateEquipe(){
+    function CreateEquipe()
+    {
         $db = \BDD\Database::getInstance();
         $statement = "INSERT INTO EQUIPE VALUES ()";
         $db->Query($statement);
         $equipes = $this->GetEquipes();
-        return $equipes[count($equipes)-1]->numeroEquipe;
-        
+        return $equipes[count($equipes) - 1]->numeroEquipe;
+
     }
 
     function UpdateEquipe($numeroEquipe, $score)
@@ -66,36 +67,26 @@ class EquipeController
         $joueurController = new \Controllers\JoueurController();
         if (isset($equipe->joueurs[0])) {
             $joueurController->deleteJoueur($equipe->joueurs[0]->personneId);
-        };
+        }
+        ;
         if (isset($equipe->joueurs[1])) {
             $joueurController->deleteJoueur($equipe->joueurs[1]->personneId);
-        };
+        }
+        ;
         $statement = "DELETE FROM EQUIPE WHERE NUMEROEQUIPE = $numeroEquipe";
         $db->Query($statement);
     }
 
-    function ComparaisonScore($a, $b) {
-        return $a['score'] - $b['score'];
-    }
 
 
-    function Classement(){
-        $equipes = $this->GetEquipes();
-        $tryHard = [];
-        $chill = [];
-        foreach ($equipes as $equipe) {
-            if ($equipe->isTryHard == 1)
-                array_push($tryHard, $equipe);
-            else 
-                array_push($chill, $equipe);
-        }
-        usort($tryHard, 'comparaisonScore');
-        usort($chill,'comparaisonScore');
+    function Classement()
+    {
+        $tryHard = $this->GetEquipes("WHERE ISTRYHARD = 1 ORDER BY (SCORE)");
+        $chill = $this->GetEquipes("WHERE ISTRYHARD = 0 ORDER BY (SCORE)");
         $classement = [
-            "TryHard"=> $tryHard,
-            "Chill"=> $chill
+            "TryHard" => $tryHard,
+            "Chill" => $chill
         ];
-
         return $classement;
     }
 }

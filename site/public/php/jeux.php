@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</form>
 					</span>
 					<div class="contenu">
-						<img src="<?php echo $jeu->lien_image ?>" alt="Image du jeu en question" srcset="">
+						<img src="../../<?php echo $jeu->lien_image ?>" alt="Image du jeu en question" srcset="">
 						<p><?php echo $jeu->description ?></p>
 					</div>
 
