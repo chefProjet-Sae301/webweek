@@ -24,7 +24,7 @@ require('../../vendor/autoload.php');
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
 	<script src="../js/caroussel.js"></script>
 
-	<title>Les jeux</title>
+	<title>Association</title>
 </head>
 
 <body>

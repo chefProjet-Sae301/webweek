@@ -17,7 +17,7 @@ require('../../vendor/autoload.php');
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
 
-	<title>Les jeux</title>
+	<title>Plan du site</title>
 </head>
 
 <body>
@@ -29,10 +29,10 @@ require('../../vendor/autoload.php');
 		<h1>Liste des pages</h1>
 		<ul>
 			<li><a href="../../index.php">Accueil</a></li>
-			<li><a href="association.php">L'association</a></li>
-			<li><a href="tournoi.php">Explication des tournois</a></li>
-			<li><a href="jeux.php">Les Jeux</a></li>
-			<li><a href="formulaire.php">Page d'inscription</a></li>
+			<li><a href="association.php">Association</a> : présentation des membres de l'association</li>
+			<li><a href="tournoi.php">Tournois</a> : explication des deux du tournois de l'évènement</li>
+			<li><a href="jeux.php">Jeux</a> : présentation des jeux potentiellements présents lors de l'évènement</li>
+			<li><a href="formulaire.php">Formulaire</a> : pour pouvoir s'inscire aux tournois ou pour pouvoir vendre</li>
 			<li><a href="mentions.php">Mentions Légales</a></li>
 			<li><a href="#">Plan du site</a></li>
 		</ul>
