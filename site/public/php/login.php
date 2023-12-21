@@ -16,6 +16,7 @@ require('../../vendor/autoload.php');
 
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
+	<script src="../js/login.js"></script>
 
 	<title>Administration</title>
 </head>
@@ -39,7 +40,7 @@ require('../../vendor/autoload.php');
 				<input type="password" name="mdp" id="mdp" required />
 			</div>
 
-			<input type="checkbox" onclick="montrerMotdePasse()">Montrer le mot de passe
+			<input type="checkbox" id="checkbox">Montrer le mot de passe
 
 			<div id="submit-div"><input type="submit" value="Connexion" /></div>
 		</form>
@@ -50,7 +51,11 @@ require('../../vendor/autoload.php');
 	include("commun/footer.php")
 	?>
 
-	<script>
+</body>
+
+</html>
+
+<!-- 	<script>
 		function montrerMotdePasse() {
 			var x = document.getElementById("mdp");
 			if (x.type === "password") {
@@ -59,7 +64,4 @@ require('../../vendor/autoload.php');
 				x.type = "password";
 			}
 		}
-	</script>
-</body>
-
-</html>
+	</script>  -->

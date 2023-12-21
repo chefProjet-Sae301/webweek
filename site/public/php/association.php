@@ -22,6 +22,7 @@ require('../../vendor/autoload.php');
 
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
+	<script src="../js/caroussel.js"></script>
 
 	<title>Les jeux</title>
 </head>
@@ -98,7 +99,6 @@ require('../../vendor/autoload.php');
 			<div class="item"><img src="../img/galerie/6.webp" alt=""></div>
 			<div class="item"><img src="../img/galerie/7.webp" alt=""></div>
 			<div class="item"><img src="../img/galerie/8.webp" alt=""></div>
-
 		</div>
 	</section>
 
@@ -113,32 +113,6 @@ require('../../vendor/autoload.php');
 	include("commun/footer.php")
 	?>
 
-	<script>
-		$(document).ready(function() {
-			$('.owl-carousel').owlCarousel({
-				loop: true,
-				margin: 10,
-				dots: true,
-				nav: true,
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 1,
-						nav: true
-					},
-					600: {
-						items: 3,
-						nav: false
-					},
-					1000: {
-						items: 5,
-						nav: true,
-						loop: false
-					}
-				}
-			});
-		});
-	</script>
 </body>
 
 </html>

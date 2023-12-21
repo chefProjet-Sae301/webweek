@@ -158,9 +158,9 @@ section img {
 	text-align: center;
 }
 
-.photoGalerie {
-	height: 15vw;
-	margin: 0 6rem;
+.owl-carousel img {
+	width: 30vw;
+		height: auto;
 }
 
 @media (max-width: 1500px){
@@ -210,11 +210,6 @@ section img {
 	#association-galerie div {
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.photoGalerie {
-		width: 30vw;
-		height: auto;
 	}
 }
 
