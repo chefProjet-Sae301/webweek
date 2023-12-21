@@ -29,11 +29,15 @@ class JeuController{
 
 
     function LikeJeu(int $JeuId, int $like) {
-
+        $db = \BDD\Database::getInstance();
+        $statement = "UPDATE JEU SET LIKEJEU = LIKEJEU + $like WHERE JEUID = $JeuId";
+        $db->Query($statement);
     }
 
     function DislikeJeu(int $JeuId, int $dislike){
-        
+        $db = \BDD\Database::getInstance();
+        $statement = "UPDATE JEU SET DISLIKEJEU = DISLIKEJEU + $dislike WHERE JEUID = $JeuId";
+        $db->Query($statement);
     }
 
     function CreateJeu(string $nom, string $description, string $lien_image){

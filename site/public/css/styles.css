@@ -283,7 +283,6 @@ input[type="submit"] {
 	color: var(--color-text-white);
 	font-size: x-large;
 	font-weight: bold;
-
 	border: none;
 	border-radius: 20px;
 	text-transform: uppercase;
@@ -389,20 +388,35 @@ input[type="checkbox"]:hover {
 	display: flex;
 }
 
+#tableJeux form{
+	display: flex;
+	justify-content: end;
+	margin:0;
+	width: fit-content;
+}
 #tableJeux input{
-	display: none;
+	border: none;
+	color: var(--color-text-white);
+	padding: 0.25rem 0.5rem;
+	margin: 0;
+	box-sizing:unset;
+	height: 40px;
+	width: fit-content;
+	font-size:medium;
+	font-weight:normal;
+	height: fit-content;
 }
 
-#tableJeux .like_label {
-	background-color: darkgreen;
-	border-top-left-radius: 1rem;
-	border-bottom-left-radius: 1rem;
+#tableJeux .like {
+	background-color: darkgreen !important;
+	border-radius: 1rem 0 0 1rem;
+	
+
 }
 
-#tableJeux .dislike_label{
-	background-color: brown;
-	border-top-right-radius: 1rem;
-	border-bottom-right-radius: 1rem;
+#tableJeux .dislike{
+	background-color: brown !important;
+	border-radius: 0 1rem 1rem 0;
 	
 }
 
@@ -411,6 +425,28 @@ input[type="checkbox"]:hover {
 	padding: 0.25rem 0.5rem;
 	margin: 0;
 }
- #tableJeux label:hover {
+ #tableJeux input:hover {
 	cursor: pointer;
+}
+@media (max-width: 780px) {
+
+	#tableJeux  form {
+		margin:0;
+		padding: 0 0 2rem 0;
+		width: fit-content;
+	}
+
+	#tableJeux .jeuTitle {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	#tableJeux .contenu.visible {
+		grid-template-columns: 1fr;
+	}
+
+	#tableJeux {
+		width: 80vw;
+	}
 }

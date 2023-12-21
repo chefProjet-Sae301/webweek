@@ -1,5 +1,26 @@
 <?php
 require('../../vendor/autoload.php');
+use \Controllers\JeuController;
+
+$jeuController = new JeuController();
+$jeux = $jeuController->GetJeux();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['like'])) {
+        $jeuId = $_POST['jeuId'];
+        $jeuController->LikeJeu($jeuId, 1);
+		header("Location: $_SERVER[PHP_SELF]");
+        exit;
+    }
+
+    if (isset($_POST['dislike'])) {
+        $jeuId = $_POST['jeuId'];
+        $jeuController->DislikeJeu($jeuId, 1);
+		header("Location: $_SERVER[PHP_SELF]");
+        exit;
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,31 +41,7 @@ require('../../vendor/autoload.php');
 		?>
 
 	<table id="tableJeux">
-		<tr>
-			<td class="menu">
-				<div></div>
-			</td>
-			<td class="jeu">
-				<div>
-				<span class="jeuTitle">
-						<h2>UNO</h2>
-						<span>
-							<input type="radio" name="like_dislike" class="like">
-							<label for="like" class="like_label"> 👍 101</label>
-							<input type="radio" name="like_dislike" class="dislike">
-							<label for="dislike" class="dislike_label">👎 12</label>
-						</span>
-					</span>
-					<div class="contenu">
-						<img src="" alt="" srcset="">
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quisquam ducimus molestias
-							aut, illum ab, magni, in neque consequuntur voluptatum quidem. Ducimus itaque cumque atque
-							dolorem quia iusto, aliquam voluptatem?</p>
-					</div>
-
-				</div>
-			</td>
-		</tr>
+		<?php foreach($jeux as $jeu){ ?>
 		<tr>
 			<td class="menu">
 				<div></div>
@@ -52,76 +49,22 @@ require('../../vendor/autoload.php');
 			<td class="jeu">
 				<div>
 					<span class="jeuTitle">
-						<h2>UNO</h2>
-						<span>
-							<input type="radio" name="like_dislike" class="like">
-							<label for="like" class="like_label"> 👍 101</label>
-							<input type="radio" name="like_dislike" class="dislike">
-							<label for="dislike" class="dislike_label">👎 12</label>
-						</span>
+						<h2><?php echo $jeu->nom ?></h2>
+						<form action="" method="post">
+							<input type="hidden" name="jeuId" value="<?php echo $jeu->jeuId ?>">
+							<input type="submit" name="like" class="like" value="👍 <?php echo $jeu->likeJeu ?>">
+							<input type="submit" name="dislike" class="dislike" value="👎 <?php echo $jeu->dislikeJeu ?>">
+						</form>
 					</span>
-
 					<div class="contenu">
-						<img src="" alt="" srcset="">
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quisquam ducimus molestias
-							aut, illum ab, magni, in neque consequuntur voluptatum quidem. Ducimus itaque cumque atque
-							dolorem quia iusto, aliquam voluptatem?</p>
+						<img src="<?php echo $jeu->lien_image ?>" alt="" srcset="">
+						<p><?php echo $jeu->description ?></p>
 					</div>
 
 				</div>
 			</td>
 		</tr>
-		<tr>
-			<td class="menu">
-				<div></div>
-			</td>
-			<td class="jeu">
-				<div>
-				<span class="jeuTitle">
-						<h2>UNO</h2>
-						<span>
-							<input type="radio" name="like_dislike" class="like">
-							<label for="like" class="like_label"> 👍 101</label>
-							<input type="radio" name="like_dislike" class="dislike">
-							<label for="dislike" class="dislike_label">👎 12</label>
-						</span>
-					</span>
-					<div class="contenu">
-						<img src="" alt="" srcset="">
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quisquam ducimus molestias
-							aut, illum ab, magni, in neque consequuntur voluptatum quidem. Ducimus itaque cumque atque
-							dolorem quia iusto, aliquam voluptatem?</p>
-					</div>
-
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td class="menu">
-				<div></div>
-			</td>
-			<td class="jeu">
-				<div>
-					<span class="jeuTitle">
-						<h2>UNO</h2>
-						<span>
-							<input type="radio" name="like_dislike" class="like">
-							<label for="like" class="like_label"> 👍 101</label>
-							<input type="radio" name="like_dislike" class="dislike">
-							<label for="dislike" class="dislike_label">👎 12</label>
-						</span>
-					</span>
-
-					<div class="contenu">
-						<img src="" alt="" srcset="">
-						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quisquam ducimus molestias
-							aut, illum ab, magni, in neque consequuntur voluptatum quidem. Ducimus itaque cumque atque
-							dolorem quia iusto, aliquam voluptatem?</p>
-					</div>
-
-				</div>
-			</td>
-		</tr>
+		<?php } ?>
 	</table>
 
 	<?php
