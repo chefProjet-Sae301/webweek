@@ -781,6 +781,54 @@ input[type="checkbox"]:hover {
 	}
 }
 
+/*********************************/
+/*            TOURNOI            */
+/*********************************/
+
+.card-body {
+	text-align: center;
+}
+
+.explication-jeu article {
+	flex-direction: column;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.explication-jeu article p {
+	object-fit: cover;
+	text-align: justify;
+	background: url(../img/flocon-bleu.png) no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+#partieMembres img {
+	object-fit: cover;
+}
+
+.debut-tournoi {
+	margin: 2em 5em;
+	text-align: center;
+}
+
+.debut-tournoi h1 {
+	padding: 25px;
+}
+
+.tournoi-text {
+	text-align: center;
+	font-size: large;
+}
+
+.btn-primary {
+	background-color: var(--bleu-fonce) !important;
+	text-align: center;
+	border: none !important;
+} 
+
 /********************************/
 /*             JEUX             */
 /********************************/
