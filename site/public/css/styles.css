@@ -28,6 +28,7 @@ h1 {
 	color: var(--bleu-fonce);
 	text-align: center;
 	font-size: xx-large;
+  text-transform: uppercase;
 }
 
 h1::before{
@@ -129,7 +130,7 @@ video {
 .table-acceuil {
 	overflow: hidden;
 	border-radius: 10px 10px 0 0;
-	background-color: var(--vert-fonce);
+	background-color: var(--bleu-fonce);
 }
 
 /* Style the buttons inside the tab */
@@ -147,12 +148,12 @@ video {
 
 /* Change background color of buttons on hover */
 .table-acceuil button:hover {
-	background-color: var(--vert);
+	background-color: var(--bleu-clair);
 }
 
 /* Create an active/current tablink class */
 .table-acceuil button.active {
-	background-color: var(--vert);
+	background-color: var(--bleu-clair);
 }
 
 /* Style the tab content */
@@ -161,7 +162,7 @@ video {
 	height: 52vh;
 	text-align: justify;
 	padding: 6px 12px;
-	background-color: var(--vert);
+	background-color: var(--bleu-clair);
 	color: var(--color-text-white);
 	-webkit-animation: fadeEffect 1s;
 	animation: fadeEffect 1s;
