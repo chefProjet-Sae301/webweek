@@ -61,6 +61,7 @@ table, tr, td{
 
 table{
     width: 100%;
+    table-layout: auto;
 }
 
 #equipe_table td, #parties_table td{
@@ -80,6 +81,7 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 input[type="date"],
+input[type="file"],
 select,
 textarea {
 	border: 2px solid var(--bleu-clair);
@@ -135,6 +137,11 @@ input[type="submit"]:hover, input[type="button"]:hover {
 	padding: 2vw;
 }
 
+.DivFormJeux .premiereLigne{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 20px;
+}
 
 @media (max-width: 1150px) {
     .DivFormJeux {
@@ -151,7 +158,10 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 
 @media (max-width: 750px) {
-
+    .DivFormJeux .premiereLigne{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
     .DivFormJeux form{
        width: 80%;
        margin :auto;  

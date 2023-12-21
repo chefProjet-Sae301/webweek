@@ -118,10 +118,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
                     <input type="radio" name="UorD" value="supprimer"> Supprimer
                 </div>
                 <div id="champsJeu">
-                    <span>
-                        <label for="nomJeu">Nom</label>
-                        <input type="text" name="nomJeu" id="nomJeu" value="">
-                        <input type="file" id="imgJeu" name="imgJeu" accept="image/png, image/jpeg" />
+                    <span class="premiereLigne">
+                        <span>
+                            <label for="nomJeu">Nom</label>
+                            <input type="text" name="nomJeu" id="nomJeu" value="">
+                        </span>
+                        <span>
+                            <label for="imgJeu">Image</label><br>
+                            <input type="file" id="imgJeu" name="imgJeu" accept="image/png, image/jpeg" /><br>
+                        </span>
                     </span>
                     <label for="description">Description</label>
                     <textarea name="description" id="description" cols="30" rows="10"></textarea>
@@ -132,10 +137,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 
             <form action="" method="post" enctype='multipart/form-data'>
                 <h3>Créer</h3>
-                <span>
-                    <label for="C_nomJeu">Nom</label>
-                    <input type="text" name="C_nomJeu" id="C_nomJeu" value="">
-                    <input type="file" id="C_imgJeu" name="C_imgJeu" accept="image/png, image/jpeg" /><br>
+                <span class="premiereLigne">
+                    <span>
+                        <label for="C_nomJeu">Nom</label>
+                        <input type="text" name="C_nomJeu" id="C_nomJeu" value="">
+                    </span>
+                    <span>
+                        <label for="imgJeu">Image</label><br>
+                        <input type="file" id="C_imgJeu" name="C_imgJeu" accept="image/png, image/jpeg" /><br>
+                    </span>
                 </span>
                 <label for="C_description">Description</label>
                 <textarea name="C_description" id="C_description" cols="30" rows="10"></textarea>
