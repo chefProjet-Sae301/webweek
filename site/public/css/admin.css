@@ -47,11 +47,8 @@
 .menuAdmin .active{
     text-decoration: underline;
 }
-
-.deconnexion_form{
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
+h2{
+    padding-bottom: 2rem;
 }
 
 .contenu {
@@ -78,3 +75,85 @@ table{
     text-align: left;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+	border: 2px solid var(--bleu-clair);
+	border-radius: 20px;
+	width: 100%;
+	padding: 0.5em;
+	box-sizing: border-box;
+	height: 40px;
+    margin: 0.5rem 0 1rem 0;
+}
+
+select {
+	text-transform: uppercase;
+	font-size: medium;
+}
+
+textarea {
+	height: 100px;
+}
+
+
+input[type="submit"], input[type="button"] {
+    margin-top: 1em;
+	padding: 0.5rem 1rem;
+	background-color: var(--bleu-clair) !important;
+	color: var(--color-text-white);
+	border: none;
+	border-radius: 20px;
+	text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	background-color: var(--bleu-fonce) !important;
+	cursor: pointer;
+}
+
+
+/********************************/
+/*             JEUX             */
+/********************************/
+
+.DivFormJeux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.DivFormJeux form {
+	background-color: var(--color-text-white);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 30px;
+	padding: 2vw;
+}
+
+
+@media (max-width: 1150px) {
+    .DivFormJeux {
+        grid-template-columns: 1fr;
+    }
+
+    .DivFormJeux form{
+       width: 60%;
+       margin :auto; 
+    }
+        .contenu{
+        padding-left: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .DivFormJeux form{
+       width: 80%;
+       margin :auto;  
+    }
+}

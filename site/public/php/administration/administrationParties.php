@@ -16,6 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
     exit();
 }
 
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
+
 ?>
 
 
@@ -25,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <script src="../js/popup.js"></script>
     <title>Noël des Chimères - Administration</title>
@@ -47,6 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
             </li>
             <li>
             <a href="administrationJeux.php">Jeux</a>
+            </li>
+            <li>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
+                    <input type="submit" name="logout" value="Déconnexion">
+                </form>
             </li>
         </ul>
     </div>
@@ -79,5 +90,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
             </tbody>
 
         </table>
-
     </div>

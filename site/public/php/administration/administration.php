@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deleteEquipe'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
-    session_unset(); // Unset des variables de session
-    session_destroy(); // Destruction de la session
-    header('Location: login.php'); // Redirection vers la page de connexion
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
     exit();
 }
 ?>
@@ -57,6 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
             </li>
             <li>
                 <a href="administrationJeux.php">Jeux</a>
+            </li>
+            <li>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
+                    <input type="submit" name="logout" value="Déconnexion">
+                </form>
             </li>
         </ul>
     </div>
@@ -140,7 +145,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
             </tbody>
 
         </table>
-     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
-            <input type="submit" name="logout" value="Déconnexion">
-        </form>
     </div>

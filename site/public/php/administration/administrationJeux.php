@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
     $sizeImg = $_FILES['imgJeu']['size'];
     $errorImg = $_FILES['imgJeu']['error'];
     $typeImg = $_FILES['imgJeu']['type'];
-    move_uploaded_file($tmpNameImg, '../../img/' . $nameImg); 
+    move_uploaded_file($tmpNameImg, '../../img/' . $nameImg);
 
     if ($UorD == "supprimer") {
         $jeuController->DeleteJeu($jeuId);
@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
         exit;
     } else if ($UorD == "modifier") {
         $jeuController->UpdateJeu($jeuId, $nomJeu, $description, '../../img/' . $nameImg);
-/*         header("Location: $_SERVER[PHP_SELF]");
-        exit; */
+        /*         header("Location: $_SERVER[PHP_SELF]");
+                exit; */
     }
 
 
@@ -55,6 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 }
 
 
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
 ?>
 
 
@@ -64,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/admin.css">
     <script src="../js/popup.js"></script>
     <title>Noël des Chimères - Administration</title>
@@ -87,11 +92,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
             <li class="active">
                 <a href="#">Jeux</a>
             </li>
+            <li>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
+                    <input type="submit" name="logout" value="Déconnexion">
+                </form>
+            </li>
         </ul>
     </div>
     <div class="contenu">
         <h2>Jeux :</h2>
-        <div style="display: flex">
+        <div class="DivFormJeux">
 
             <form action="administrationJeux.php" method="post" enctype='multipart/form-data'>
                 <h3>Modifier / Supprimer</h3>
@@ -119,13 +129,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 
                 <input type="submit" value="Envoyer" id="submitJeu" name="modifierSupprimer">
             </form>
-            
+
             <form action="" method="post" enctype='multipart/form-data'>
                 <h3>Créer</h3>
                 <span>
                     <label for="C_nomJeu">Nom</label>
                     <input type="text" name="C_nomJeu" id="C_nomJeu" value="">
-                    <input type="file" id="C_imgJeu" name="C_imgJeu" accept="image/png, image/jpeg" />
+                    <input type="file" id="C_imgJeu" name="C_imgJeu" accept="image/png, image/jpeg" /><br>
                 </span>
                 <label for="C_description">Description</label>
                 <textarea name="C_description" id="C_description" cols="30" rows="10"></textarea>
@@ -134,6 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
             </form>
         </div>
     </div>
+
 </body>
 
 <script>
