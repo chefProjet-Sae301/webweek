@@ -11,8 +11,7 @@ class Partie_TournoiController{
         foreach ($results as $result) {
             $partie_tournoi = new \Models\Partie_Tournoi(
                 $result['TOURNOIID'],
-                $result['DATETOURNOI'],
-                $result['ISTRYHARD']
+                $result['DATETOURNOI']
             );
             $equipe1 = $equipeController->GetEquipe($result['NUMEROEQUIPE']);
             $equipe2 = $equipeController->GetEquipe($result['NUMEROEQUIPE2']);
@@ -32,5 +31,13 @@ class Partie_TournoiController{
             throw new \Exception('$equipe1 ou $equipe2 ne sont pas de type Equipe().');
         }
     }
+
+    function DeletePartie(int $tournoiId) {
+        $db = \BDD\Database::getInstance();
+        $statement = "DELETE FROM PARTIE_TOURNOI WHERE TOURNOIID = $tournoiId";
+        $db->Query($statement);
+    }
+
+
 }
 ?>

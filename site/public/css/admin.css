@@ -1,25 +1,33 @@
+:root {
+	/* couleurs de bases */
+	--bleu-fonce: rgb(35 53 96);
+	--bleu-clair: rgb(105 146 180);
+	--color-text-black: rgb(0 0 0);
+	--color-text-white: rgb(255 255 255);
+}
+
 *{
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    display: flex;
-}
 .menuAdmin{
     background-color: var(--bleu-fonce);
     min-width: min-content;
     width: 15vw;
     color: var(--color-text-white) !important;
     /*min-height: 100vh;*/
-    height: fit-content;
+    height: 100vh;
+    position: fixed;
 }
 
 .menuAdmin h1 {
     color: var(--color-text-white) !important;
     border-bottom: solid 1px var(--color-text-white);
     padding: 2rem 0;
+    text-align: center;
+	font-size: xx-large;
 }
 
 .menuAdmin ul{
@@ -39,13 +47,21 @@ body{
 .menuAdmin .active{
     text-decoration: underline;
 }
+h2{
+    padding-bottom: 2rem;
+}
 
 .contenu {
-    padding: 2rem;
+    padding: 2rem 2rem 2rem calc(2rem + 15vw);
 }
 
 table, tr, td{
     border-collapse: collapse;
+}
+
+table{
+    width: 100%;
+    table-layout: auto;
 }
 
 #equipe_table td, #parties_table td{
@@ -58,4 +74,96 @@ table, tr, td{
     list-style: none;
     margin: 0rem  2rem;
     text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+	border: 2px solid var(--bleu-clair);
+	border-radius: 20px;
+	width: 100%;
+	padding: 0.5em;
+	box-sizing: border-box;
+	height: 40px;
+    margin: 0.5rem 0 1rem 0;
+}
+
+select {
+	text-transform: uppercase;
+	font-size: medium;
+}
+
+textarea {
+	height: 100px;
+}
+
+
+input[type="submit"], input[type="button"] {
+    margin-top: 1em;
+	padding: 0.5rem 1rem;
+	background-color: var(--bleu-clair) !important;
+	color: var(--color-text-white);
+	border: none;
+	border-radius: 20px;
+	text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	background-color: var(--bleu-fonce) !important;
+	cursor: pointer;
+}
+
+
+/********************************/
+/*             JEUX             */
+/********************************/
+
+.DivFormJeux {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.DivFormJeux form {
+	background-color: var(--color-text-white);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 30px;
+	padding: 2vw;
+}
+
+.DivFormJeux .premiereLigne{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 20px;
+}
+
+@media (max-width: 1150px) {
+    .DivFormJeux {
+        grid-template-columns: 1fr;
+    }
+
+    .DivFormJeux form{
+       width: 60%;
+       margin :auto; 
+    }
+        .contenu{
+        padding-left: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+    .DivFormJeux .premiereLigne{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .DivFormJeux form{
+       width: 80%;
+       margin :auto;  
+    }
 }

@@ -15,6 +15,7 @@ class EquipeController
             $equipe = new \Models\Equipe(
                 $result['NUMEROEQUIPE'],
                 $result['SCORE'],
+                $result['ISTRYHARD'],
             );
             $joueurs = $joueursController->GetJoueurByEquipe($result['NUMEROEQUIPE']);
             foreach ($joueurs as $joueur) {
@@ -42,6 +43,15 @@ class EquipeController
         }
     }
 
+    function CreateEquipe(){
+        $db = \BDD\Database::getInstance();
+        $statement = "INSERT INTO EQUIPE VALUES ()";
+        $db->Query($statement);
+        $equipes = $this->GetEquipes();
+        return $equipes[count($equipes)-1]->numeroEquipe;
+        
+    }
+
     function UpdateEquipe($numeroEquipe, $score)
     {
         $db = \BDD\Database::getInstance();
@@ -52,19 +62,41 @@ class EquipeController
     function DeleteEquipe($numeroEquipe)
     {
         $db = \BDD\Database::getInstance();
-        $equipe = $this->GetEquipe($numeroEquipe);
+        $equipe = $this->GetEquipe($numeroEquipe)[0];
         $joueurController = new \Controllers\JoueurController();
         if (isset($equipe->joueurs[0])) {
             $joueurController->deleteJoueur($equipe->joueurs[0]->personneId);
-        }
-        ;
+        };
         if (isset($equipe->joueurs[1])) {
             $joueurController->deleteJoueur($equipe->joueurs[1]->personneId);
-        }
-        ;
+        };
         $statement = "DELETE FROM EQUIPE WHERE NUMEROEQUIPE = $numeroEquipe";
         $db->Query($statement);
     }
 
+    function ComparaisonScore($a, $b) {
+        return $a['score'] - $b['score'];
+    }
+
+
+    function Classement(){
+        $equipes = $this->GetEquipes();
+        $tryHard = [];
+        $chill = [];
+        foreach ($equipes as $equipe) {
+            if ($equipe->isTryHard == 1)
+                array_push($tryHard, $equipe);
+            else 
+                array_push($chill, $equipe);
+        }
+        usort($tryHard, 'comparaisonScore');
+        usort($chill,'comparaisonScore');
+        $classement = [
+            "TryHard"=> $tryHard,
+            "Chill"=> $chill
+        ];
+
+        return $classement;
+    }
 }
 ?>

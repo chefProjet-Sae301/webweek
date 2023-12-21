@@ -5,12 +5,10 @@ class Partie_Tournoi{
     public \Models\Equipe $equipe1;
     public \Models\Equipe $equipe2;
     public string $dateTournoi;
-    public bool $isTryHard;
 
-    function __construct(int $tournoiId, string $dateTournoi, bool $isTryHard) {
+    function __construct(int $tournoiId, string $dateTournoi) {
         $this->tournoiId = $tournoiId;
         $this->dateTournoi = $dateTournoi;
-        $this->isTryHard = $isTryHard;
     }
 
 
