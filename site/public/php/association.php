@@ -43,8 +43,8 @@ require('../../vendor/autoload.php');
 	<section id="association-membres">
 		<div class="ligne-membres">
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/noe.webp">
-				<p>Noé</p>
+				<img class="img-membres" alt="membre de l'association" src="../img/association/thomas.webp">
+				<p>Thomas</p>
 			</div>
 			<div class="expo-membres">
 				<img class="img-membres" alt="membre de l'association" src="../img/association/paul.webp">
@@ -69,7 +69,7 @@ require('../../vendor/autoload.php');
 				<p>Camille</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/thomas.webp">
+				<img class="img-membres" alt="membre de l'association" src="../img/association/thomass.webp">
 				<p>Thomas</p>
 			</div>
 			<div class="expo-membres">
@@ -79,7 +79,7 @@ require('../../vendor/autoload.php');
 		</div>
 	</section>
 
-	<section class="association-citation">
+	<section class="img-texte citations">
 		<article>
 			<p>L’édition 2019 de notre salon du jeu, celle qui passait un cap en termes de taille, d’activité et de publics.</p>
 		</article>
@@ -90,20 +90,19 @@ require('../../vendor/autoload.php');
 		<h2>Galerie</h2>
 
 		<div class="owl-carousel owl-theme">
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
-			<div class="item"><img src="../../../../download.jpg" alt=""></div>
+			<div class="item"><img src="../img/galerie/1.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/2.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/3.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/4.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/5.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/6.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/7.webp" alt=""></div>
+			<div class="item"><img src="../img/galerie/8.webp" alt=""></div>
+
 		</div>
 	</section>
 
-	<section class="association-citation">
+	<section class="img-texte citations">
 		<img src="../img/association/asso2023.webp">
 		<article>
 			<p>Notre dernière édition, ou vous étiez plus de 1500 sans compter les entré en passe week-end ! Merci à vous, aux bénévoles et tous ceux qui ont rendu cela possible.</p>

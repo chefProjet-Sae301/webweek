@@ -86,7 +86,7 @@ footer a, .nav-link {
 	flex-direction: column;
 }
 
-#association-partie p, .association-citation p {
+#association-partie p, .img-texte p {
 	padding: 3em 5em;
 }
 
@@ -117,15 +117,23 @@ section img {
 	margin: 1rem 5rem;
 }
 
-.association-citation {
+.img-texte {
 	display: flex;
 	gap: 5%;
 	margin: 4em 20vw;
 }
 
-.association-citation article {
+.img-texte article {
 	display: flex;
 	align-items: center;
+}
+
+.citations article {
+	object-fit: cover;
+    text-align: justify;
+    background: url(../img/quotation.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
 
 #association-galerie {
@@ -155,6 +163,12 @@ section img {
 	margin: 0 6rem;
 }
 
+@media (max-width: 1500px){
+	.citations article {
+		background: none;
+	}
+}
+
 @media (max-width: 900px) {
 
 	#association-partie {
@@ -166,7 +180,7 @@ section img {
 		margin: 2rem 0 1rem;
 	}
 
-	#association-partie p, .association-citation p {
+	#association-partie p, .img-texte p {
 		padding: 0 0;
 	}
 
@@ -185,11 +199,11 @@ section img {
 		width: 25vw;
 	}
 
-	.association-citation {
+	.img-texte {
 		flex-direction: column;
 	}
 	
-	.association-citation article {
+	.img-texte article {
 		text-align: center;
 	}
 	
@@ -350,6 +364,23 @@ aside{
 	background-color: #f1f1f1;
 	width: 30%;
 	height: 300px;
+}
+
+/*********************************/
+/*            TOURNOI            */
+/*********************************/
+
+.explication-jeu article {
+	flex-direction: column;
+}
+
+.explication-jeu article p {
+	object-fit: cover;
+	text-align: justify;
+	background: url(../img/flocon-bleu.png) no-repeat;
+	background-size: contain;
+	background-position: center center;
+
 }
 
 /********************************/
