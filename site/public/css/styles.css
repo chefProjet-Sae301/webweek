@@ -178,10 +178,10 @@ video {
 /* Media Queries */
 @media screen and (max-width: 600px) {
 	.tab-container {
-		padding: 0;
+		padding: 50px 0 0 0;
 		margin-top: 50px;
 		width: 84vw;
-		margin-left: 5vw;
+		margin: auto;
 
 	}
 
@@ -223,6 +223,10 @@ video {
 		justify-content: center;
 		margin-top: 10vw;
 	}
+
+  .image-container-tab {
+    display: none;
+}
 }
 
 /**************************************/
@@ -314,6 +318,7 @@ video {
 		width: 80vw;
 		margin: 0;
 		padding: 20px;
+    z-index: 1;
 	}
 
 	.image-container-bj img {
@@ -384,7 +389,7 @@ video {
 		display: flex;
 		width: 80vw;
 		margin: 0;
-		padding: 0;
+		padding: 0 0 40px 0;
 	}
 
 	.image-container-tournoi img {
