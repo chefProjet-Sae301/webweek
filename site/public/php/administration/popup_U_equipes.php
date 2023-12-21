@@ -3,6 +3,8 @@ require('../../../vendor/autoload.php');
 
 use \Controllers\EquipeController, \Controllers\JoueurController;
 
+// Gestion des actions GET
+
 if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['submit'])) {
 	traiterFormulaire($_GET);
 }

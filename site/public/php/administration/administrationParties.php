@@ -3,12 +3,15 @@
 use Controllers\Partie_TournoiController;
 
 session_start();
+// Vérification de l'authentification de l'utilisateur
 if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
 	header('Location: login.php');
 	exit();
 };
 $partiesController = new Partie_TournoiController();
 $parties = $partiesController->GetParties_Tournois();
+
+// Gestion des actions POST
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deletePartie'])) {
 	$tournoiId = $_POST['deletePartie'];

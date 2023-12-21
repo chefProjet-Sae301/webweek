@@ -1,31 +1,41 @@
-<?php require('../../../vendor/autoload.php');
+<?php
+require('../../../vendor/autoload.php');
 
 use Controllers\EquipeController, Controllers\JoueurController;
 
 session_start();
+
+// Vérification de l'authentification de l'utilisateur
 if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
-	header('Location: login.php');
-	exit();
+    header('Location: login.php');
+    exit();
 }
+
 $equipeController = new EquipeController();
 $equipes = $equipeController->GetEquipes();
 
+// Gestion des actions POST
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deleteEquipe'])) {
-	$numeroEquipe = $_POST['deleteEquipe'];
+    $numeroEquipe = $_POST['deleteEquipe'];
 
-	$equipeController->DeleteEquipe($numeroEquipe);
+    
+    $equipeController->DeleteEquipe($numeroEquipe);
 
-	header("Location: {$_SERVER['PHP_SELF']}");
-	exit();
+    // Redirection vers la même page après la suppression
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
-	session_unset();
-	session_destroy();
-	header('Location: login.php');
-	exit();
+    // Déconnexion de l'utilisateur
+    session_unset();
+    session_destroy();
+    header('Location: login.php'); // Redirection vers la page de connexion après la déconnexion
+    exit();
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -63,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 				<a href="administrationJeux.php">Jeux</a>
 			</li>
 			<li>
+				<!-- Formulaire pour se déconnecter -->
 				<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="deconnexion_form">
 					<input type="submit" name="logout" value="Déconnexion">
 				</form>
@@ -71,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 	</div>
 	<div class="contenu">
 		<h2>Equipes :</h2>
+		<!-- Lien pour ouvrir une popup de d'ajout d'équipe -->
 		<a onclick="open('popup_C_equipes.php', '_blank', 'width=800,height=600'); return False;">
 			<input type="button" value="Ajouter">
 		</a>
@@ -129,10 +141,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 
 
 						<td>
+							<!-- Formulaire pour supprimer une équipe -->
 							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette équipe?');">
 								<input type="hidden" name="deleteEquipe" value="<?php echo $equipe->numeroEquipe; ?>">
 								<input type="submit" value="Supprimer">
 							</form>
+
+							<!-- Lien pour ouvrir une popup de modification d'équipe -->
 							<?php if (isset($equipe->joueurs[0]) || isset($equipe->joueurs[1])) { ?>
 								<a onclick="open('popup_U_equipes.php?numeroequipe=<?php echo $equipe->numeroEquipe ?>&score=<?php echo $equipe->score ?>&joueur1id=<?php echo isset($equipe->joueurs[0]->personneId) ? $equipe->joueurs[0]->personneId : '' ?>&joueur1nom=<?php echo isset($equipe->joueurs[0]->nom) ? $equipe->joueurs[0]->nom : '' ?>&joueur1prenom=<?php echo isset($equipe->joueurs[0]->prenom) ? $equipe->joueurs[0]->prenom : '' ?>&joueur1datenaissance=<?php echo isset($equipe->joueurs[0]->dateNaissance) ? $equipe->joueurs[0]->dateNaissance : '' ?>&joueur1numerojoueur=<?php echo isset($equipe->joueurs[0]->numeroJoueur) ? $equipe->joueurs[0]->numeroJoueur : '' ?>&joueur1mailjoueur=<?php echo isset($equipe->joueurs[0]->mailJoueur) ? $equipe->joueurs[0]->mailJoueur : '' ?>&joueur2id=<?php echo isset($equipe->joueurs[1]->personneId) ? $equipe->joueurs[1]->personneId : '' ?>&joueur2nom=<?php echo isset($equipe->joueurs[1]->nom) ? $equipe->joueurs[1]->nom : '' ?>&joueur2prenom=<?php echo isset($equipe->joueurs[1]->prenom) ? $equipe->joueurs[1]->prenom : '' ?>&joueur2datenaissance=<?php echo isset($equipe->joueurs[1]->dateNaissance) ? $equipe->joueurs[1]->dateNaissance : '' ?>&joueur2numerojoueur=<?php echo isset($equipe->joueurs[1]->numeroJoueur) ? $equipe->joueurs[1]->numeroJoueur : '' ?>&joueur2mailjoueur=<?php echo isset($equipe->joueurs[1]->mailJoueur) ? $equipe->joueurs[1]->mailJoueur : '' ?>', '_blank', 'width=800,height=600'); return False;">
 									<input type="button" value="Modifier" id="<?php echo "equipe" . $equipe->numeroEquipe; ?>-update">

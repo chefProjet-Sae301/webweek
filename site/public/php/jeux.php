@@ -5,6 +5,7 @@ use \Controllers\JeuController;
 $jeuController = new JeuController();
 $jeux = $jeuController->GetJeux();
 
+// Gestion des méthodes POST pour liker ou disliker un jeu
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['like'])) {
         $jeuId = $_POST['jeuId'];
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
+	<script src="../js/jeux.js"></script>
 
 	<title>Les jeux</title>
 </head>
@@ -81,17 +83,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 </html>
-
-<script>
-	const menus = document.querySelectorAll('.menu');
-	const contenus = document.querySelectorAll('.contenu');
-
-	menus.forEach((menu, index) => {
-		menu.addEventListener('click', () => {
-			contenus.forEach(contenu => contenu.classList.remove('visible'));
-			menus.forEach(menu => menu.classList.remove('visible'));
-			contenus[index].classList.add('visible');
-			menu.classList.add('visible');
-		});
-	});
-</script>

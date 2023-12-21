@@ -1,15 +1,18 @@
-<?php require('../../../vendor/autoload.php');
-
+<?php
+require('../../../vendor/autoload.php');
 use Controllers\JeuController;
-
 session_start();
+
+// Vérification de l'authentification de l'utilisateur
 if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
 	header('Location: login.php');
 	exit();
 };
+
 $jeuController = new JeuController();
 $jeux = $jeuController->GetJeux();
 
+// Traitement du formulaire "Modifier / Supprimer"
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer'])) {
 	$jeu = $_POST['jeuId'];
 	$jeuId = explode(';', $jeu)[0];
@@ -17,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
 	$nomJeu = $_POST['nomJeu'];
 	$description = $_POST['description'];
 
+	// Récupération des données du fichier image
 	$tmpNameImg = $_FILES['imgJeu']['tmp_name'];
 	$nameImg = $_FILES['imgJeu']['name'];
 	$sizeImg = $_FILES['imgJeu']['size'];
@@ -30,16 +34,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
 		exit;
 	} else if ($UorD == "modifier") {
 		$jeuController->UpdateJeu($jeuId, $nomJeu, $description, '../../img/' . $nameImg);
-		/*         header("Location: $_SERVER[PHP_SELF]");
-                exit; */
+		header("Location: $_SERVER[PHP_SELF]");
+		exit;
 	}
 }
 
-// Traitement du deuxième formulaire "Créer"
+// Traitement du formulaire "Créer"
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 	$C_nomJeu = $_POST['C_nomJeu'];
 	$C_description = $_POST['C_description'];
 
+	// Récupération des données du fichier image pour la création
 	$C_tmpNameImg = $_FILES['C_imgJeu']['tmp_name'];
 	$C_nameImg = $_FILES['C_imgJeu']['name'];
 	$C_sizeImg = $_FILES['C_imgJeu']['size'];
@@ -52,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 	exit;
 }
 
-
+// Traitement de la déconnexion
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 	session_unset();
 	session_destroy();
@@ -72,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 	<link rel="icon" href="../../img/favicon.ico" />
 
 	<link rel="stylesheet" href="../../css/admin.css">
-	<script src="../js/popup.js"></script>
+	<script src="../../js/administration/administrationJeux.js"></script>
 	<title>Noël des Chimères - Administration</title>
 </head>
 
@@ -157,35 +162,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 	</div>
 
 </body>
-
-<script>
-	document.getElementById('modifierSupprimer').style.display = 'none';
-	document.getElementById('champsJeu').style.display = 'none';
-	document.querySelector('[name="jeuId"]').addEventListener('change', function(event) {
-		var selectedOptionValue = event.target.value;
-		var values = selectedOptionValue.split(';');
-
-		document.getElementById('nomJeu').value = values[1] != null ? values[1] : "";
-		document.getElementById('description').value = values[3] != null ? values[3] : "";
-
-		if (selectedOptionValue === "") {
-			document.getElementById('modifierSupprimer').style.display = 'none';
-			document.getElementById('champsJeu').style.display = 'none';
-			document.getElementById('submitJeu').style.display = 'none';
-		} else {
-			document.getElementById('modifierSupprimer').style.display = 'block';
-			document.getElementById('submitJeu').style.display = 'block';
-		}
-	});
-
-	document.querySelectorAll('[name="UorD"]').forEach(function(radio) {
-		radio.addEventListener('change', function(event) {
-			var supprimerChecked = document.querySelector('[name="UorD"]:checked').value === "supprimer";
-			if (supprimerChecked) {
-				document.getElementById('champsJeu').style.display = 'none';
-			} else {
-				document.getElementById('champsJeu').style.display = 'block';
-			}
-		});
-	});
-</script>
