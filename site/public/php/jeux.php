@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	include("commun/header.php")
 		?>
 
+	<h1 class='jeuxPageTitle'>Jeux</h1>
 	<table id="tableJeux">
 		<?php foreach($jeux as $jeu){ ?>
 		<tr>
@@ -56,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			<td class="jeu">
 				<div>
 					<span class="jeuTitle">
-						<h2><?php echo $jeu->nom ?></h2>
+						<h3><?php echo $jeu->nom ?></h3>
 						<form action="" method="post">
 							<input type="hidden" name="jeuId" value="<?php echo $jeu->jeuId ?>">
 							<input type="submit" name="like" class="like" value="👍 <?php echo $jeu->likeJeu ?>">
