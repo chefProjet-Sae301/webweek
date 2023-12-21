@@ -26,6 +26,7 @@ require('../../vendor/autoload.php');
 	?>
 
 	<section id="mentions">
+		
 		<h1>MENTIONS LÉGALES</h1>
 
 		<p>Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la
@@ -70,7 +71,6 @@ require('../../vendor/autoload.php');
 		<p>Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du Site,
 			sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites judiciaires
 			telles que notamment prévues par le Code de la propriété intellectuelle et le Code civil.</p>
-
 
 	</section>
 

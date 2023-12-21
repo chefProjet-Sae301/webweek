@@ -9,7 +9,7 @@ require('../../vendor/autoload.php');
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
@@ -33,7 +33,7 @@ require('../../vendor/autoload.php');
 	?>
 
 	<section id="association-partie">
-		<img src="../img/association/noe.webp">
+		<img src="../img/association/noe.webp" alt="Photo de président de l'association Noé">
 		<article>
 			<h1>Noé</h1>
 
@@ -44,37 +44,37 @@ require('../../vendor/autoload.php');
 	<section id="association-membres">
 		<div class="ligne-membres">
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/thomas.webp">
+				<img class="img-membres" alt="Thomas : membre de l'association" src="../img/association/thomas.webp">
 				<p>Thomas</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/paul.webp">
+				<img class="img-membres" alt="Paul : membre de l'association" src="../img/association/paul.webp">
 				<p>Paul</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/clara.webp">
+				<img class="img-membres" alt="Clara : membre de l'association" src="../img/association/clara.webp">
 				<p>Clara</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/clelie.webp">
+				<img class="img-membres" alt="Clélie : membre de l'association" src="../img/association/clelie.webp">
 				<p>Clélie</p>
 			</div>
 		</div>
 		<div class="ligne-membres">
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/augustin.webp">
+				<img class="img-membres" alt="Augustin : faux membre de l'association" src="../img/association/augustin.webp">
 				<p>Augustin</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/camille.webp">
+				<img class="img-membres" alt="Camille : faux membre de l'association" src="../img/association/camille.webp">
 				<p>Camille</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/thomass.webp">
+				<img class="img-membres" alt="Thomas : faux membre de l'association" src="../img/association/thomass.webp">
 				<p>Thomas</p>
 			</div>
 			<div class="expo-membres">
-				<img class="img-membres" alt="membre de l'association" src="../img/association/titouan.webp">
+				<img class="img-membres" alt="Titouan : faux membre de l'association" src="../img/association/titouan.webp">
 				<p>Titouan</p>
 			</div>
 		</div>
@@ -84,26 +84,26 @@ require('../../vendor/autoload.php');
 		<article>
 			<p>L’édition 2019 de notre salon du jeu, celle qui passait un cap en termes de taille, d’activité et de publics.</p>
 		</article>
-		<img src="../img/association/asso2019.webp">
+		<img src="../img/association/asso2019.webp" alt="Photo de l'association en 2019">
 	</section>
 
 	<section id="association-galerie">
 		<h2>Galerie</h2>
 
 		<div class="owl-carousel owl-theme">
-			<div class="item"><img src="../img/galerie/1.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/2.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/3.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/4.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/5.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/6.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/7.webp" alt=""></div>
-			<div class="item"><img src="../img/galerie/8.webp" alt=""></div>
+			<div class="item"><img src="../img/1.webp" alt="Image de galerie : affiche 2024 d'un évènement de l'association"></div>
+			<div class="item"><img src="../img/2.webp" alt="Image de galerie : affiche 2023 d'un évènement de l'association"></div>
+			<div class="item"><img src="../img/3.webp" alt="Image de galerie : prise lors d'un évènement costumé"></div>
+			<div class="item"><img src="../img/4.webp" alt="Image de galerie : prise lors d'un évènement"></div>
+			<div class="item"><img src="../img/5.webp" alt="Image de galerie : prise lors d'un évènement"></div>
+			<div class="item"><img src="../img/6.webp" alt="Image de galerie : prise lors d'un évènement"></div>
+			<div class="item"><img src="../img/7.webp" alt="Image de galerie : prise lors d'une conférence"></div>
+			<div class="item"><img src="../img/8.webp" alt="Image de galerie : prise lors d'un évènement"></div>
 		</div>
 	</section>
 
 	<section class="img-texte citations">
-		<img src="../img/association/asso2023.webp">
+		<img src="../img/association/asso2023.webp" alt="Photo de l'association en 2023">
 		<article>
 			<p>Notre dernière édition, ou vous étiez plus de 1500 sans compter les entré en passe week-end ! Merci à vous, aux bénévoles et tous ceux qui ont rendu cela possible.</p>
 		</article>
