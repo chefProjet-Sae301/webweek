@@ -478,39 +478,22 @@ video {
 /**************************************/
 /*                 Tableau          */
 /**************************************/
-.title {
-	text-align: center;
-	border-radius: 10px;
-	padding: 10px;
-	margin-bottom: 20px;
+#classement_index {
+  padding: 3rem 0;
+  text-align: center;
 }
 
-.container-tableau {
-	display: flex;
-	justify-content: space-around;
+#classement_index .tables{
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#table1 {
-	width: 25%;
-	border-collapse: collapse;
-	border-radius: 10px;
-	overflow: hidden;
-	color: var(--color-text-white);
+#classement_index .classementTables tr{
+  background-color: #f9f9f9 !important;
 }
 
-#table2 {
-	width: 25%;
-	border-collapse: collapse;
-	border-radius: 10px;
-	overflow: hidden;
-	color: var(--color-text-white);
-}
-
-.cellule {
-	height: 50px;
-	background-color: var(--vert);
-	border: 1px solid var(--color-text-black);
-
+#classement_index h3{
+  margin-top: 2rem;
 }
 
 .boutton-tournoi2 {
@@ -534,18 +517,15 @@ video {
 }
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
-	.container-tableau {
-		display: flex;
-		align-items: center;
-	}
-
-	#table1,
-	#table2 {
-		width: 45%;
-		margin: 2.5%;
-	}
+@media (max-width: 900px) {
+  #classement_index .tables{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
 }
+
 
 /**************************************/
 /*                 Responsive          */
