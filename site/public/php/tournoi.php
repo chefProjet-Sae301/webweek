@@ -95,37 +95,59 @@ $equipes = $equipeController->Classement();
 
 	<!-- Section classement -->
 	<section id="classement_equipes">
+		<span class="form1">
+			<svg viewBox="0 0 286 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path  d="M281.5 273.704C317 65.2042 75.5 -43.2958 0 16.2042V273.704H281.5Z" fill="#233560"/>
+</svg>
+		</span>
+		<span class="form2">
+		<svg viewBox="0 0 212 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.63201 -3.04474e-06C-23.7714 155.401 155.846 236.27 212 191.923L212 1.52588e-05L2.63201 -3.04474e-06Z" fill="#233560"/>
+</svg>
+
+		</span>
+	
 		<div class="">
-			<table class="classement tableChill">
-				<?php for ($i = 0; $i < count($equipes['Chill']); $i++) { ?>
-					<tr>
-						<td>
-							<?php echo $i + 1 ?>
-						</td>
-						<td>
-							<?php echo "equipe n° " . $equipes['Chill'][$i]->numeroEquipe ?>
-						</td>
-						<td>
-							<?php echo $equipes['Chill'][$i]->score ?>
-						</td>
-					</tr>
-				<?php } ?>
-			</table>
-			<table class="classement tableTryHard">
-				<?php for ($i = 0; $i < count($equipes['TryHard']); $i++) { ?>
-					<tr>
-						<td>
-							<?php echo $i + 1 ?>
-						</td>
-						<td>
-							<?php echo "equipe n° " . $equipes['TryHard'][$i]->numeroEquipe ?>
-						</td>
-						<td>
-							<?php echo $equipes['TryHard'][$i]->score ?>
-						</td>
-					</tr>
-				<?php } ?>
-			</table>
+			<h2>Classement</h2>
+			<span class="tables">
+				<span>
+					<h3>Chill</h3>
+					<table class="classementTables tableChill">
+					<?php for ($i = 0; $i < count($equipes['Chill']); $i++) { ?>
+						<tr>
+							<td class="<?php echo "num".$i + 1. ?> numEquipe">
+								<?= $i + 1 ?>
+							</td>
+							<td >
+								<?php echo "Équipe n° " . $equipes['Chill'][$i]->numeroEquipe ?>
+							</td>
+							<td>
+								<?php echo $equipes['Chill'][$i]->score ?> points
+							</td>
+						</tr>
+					<?php } ?>
+				</table>
+			</span>
+			<span>
+				<h3>Try Hard</h3>
+				<table class="classementTables tableTryHard">
+					<?php for ($i = 0; $i < count($equipes['TryHard']); $i++) { ?>
+						<tr>
+							<td class="<?php echo "num".$i + 1. ?> numEquipe">
+								<?php echo $i + 1 ?>
+							</td>
+							<td>
+								<?php echo "Équipe n° " . $equipes['TryHard'][$i]->numeroEquipe ?>
+							</td>
+							<td>
+								<?php echo $equipes['TryHard'][$i]->score ?> points
+							</td>
+						</tr>
+					<?php } ?>
+				</table>
+				<span>
+			</span>
+
 		</div>
 	</section>
 

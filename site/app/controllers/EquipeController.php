@@ -81,8 +81,8 @@ class EquipeController
 
     function Classement()
     {
-        $tryHard = $this->GetEquipes("WHERE ISTRYHARD = 1 ORDER BY (SCORE)");
-        $chill = $this->GetEquipes("WHERE ISTRYHARD = 0 ORDER BY (SCORE)");
+        $tryHard = $this->GetEquipes("WHERE ISTRYHARD = 1 ORDER BY (SCORE) desc");
+        $chill = $this->GetEquipes("WHERE ISTRYHARD = 0 ORDER BY (SCORE) desc");
         $classement = [
             "TryHard" => $tryHard,
             "Chill" => $chill

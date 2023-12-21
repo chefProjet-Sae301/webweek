@@ -6,6 +6,14 @@
 	--color-text-black: rgb(0 0 0);
 	--color-text-white: rgb(255 255 255);
 }
+@font-face {
+  font-family: 'insanibu';
+  src: url('../fonts/Insanibu.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'happyChristmas';
+  src: url('../fonts/PWHappyChristmas.ttf') format('truetype');
+}
 
 html,
 body {
@@ -672,7 +680,6 @@ section img {
 
 	section img {
 		height: 35vh;
-		height: auto;
 	}
 
 	.ligne-membres {
@@ -882,7 +889,93 @@ input[type="checkbox"]:hover {
 	border: none !important;
 }
 
+#classement_equipes{
+  background-color: var(--bleu-clair);
+  text-align: center;
+  padding: 2rem;
+  color: var(--bleu-fonce);
+  position: relative;
+}
 
+#classement_equipes .tables{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+#classement_equipes h3{
+  color: var(--color-text-white);
+  font-family: 'insanibu';
+  margin-top: 2rem;
+}
+.classementTables{
+  width: 35vw;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.classementTables, .classementTables tr{
+  background-color: var(--color-text-white);
+  
+}
+
+.classementTables tr{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px inset;
+}
+
+.classementTables td{
+  padding: 0.5rem;
+  width: calc(35vw /3);
+}
+.classementTables .numEquipe{
+  font-family: 'happyChristmas';
+  font-size: xx-large;
+}
+
+.classementTables .num1{
+   color: #d6a529;
+}
+
+.classementTables .num2{
+  color: #858585;
+}
+
+.classementTables .num3{
+  color: #c35c3b;
+}
+#classement_equipes div{
+  position: relative;
+  z-index: 4;
+}
+#classement_equipes .form1{
+  width: 15vw;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  z-index: 3;
+}
+
+#classement_equipes .form2{
+  width: 15vw ;
+  position: absolute;
+  right:0;
+  top: 0;
+  z-index: 3;
+}
+@media (max-width: 900px) {
+  #classement_equipes .tables{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  #classement_equipes .form2, #classement_equipes .form1{
+    width: 30vw ;
+  }
+  .classementTables{
+    width: 80vw;
+  }
+}
 
 /********************************/
 /*             JEUX             */
@@ -1015,6 +1108,7 @@ input[type="checkbox"]:hover {
 		width: 80vw;
 	}
 }
+
 
 
 /********************************/
