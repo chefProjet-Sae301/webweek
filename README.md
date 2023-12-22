@@ -26,10 +26,10 @@ Assurez-vous d'installer ces dépendances pour utiliser pleinement le projet.
 ## Contributeurs
 Les contributeurs à ce projet sont :
 
-- Camille GAILLARD
-- Titouan BRUYERE
 - Augustin BERGOT
+- Camille GAILLARD
 - Thomas SOUDAN
+- Titouan BRUYERE
 
 Ce projet est réalisé dans le cadre d'un travail d'équipe impliquant ces contributeurs.
 
