@@ -14,7 +14,7 @@ function openTab(evt, tabName) {
 	evt.currentTarget.className += " active";
 }
 
-// Sélectionnez un onglet par défaut
+// sélectionne un onglet par défaut
 window.onload = function () {
 	document.getElementById("defaultOpen").click();
 };
