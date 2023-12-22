@@ -82,7 +82,7 @@ $equipes = $equipeController->Classement();
     <main>
         <!-- Ajout de la vidéo chnager la vidéo  -->
         <div id="video-container">
-            <video src="public/img/vidéowebweek.mp4" controls></video>
+           <iframe width="100%" src="https://www.youtube.com/embed/F-kkh1VJ16Q?si=ogrb8VmKRLL33KE3?autoplay=1&cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="container-tab">
             <div class="tab-container">
