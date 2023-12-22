@@ -72,7 +72,7 @@ a {
 header,
 footer {
 	background-color: var(--bleu-fonce);
-	padding: 0 5vw 0 2vw;
+	padding: 1rem 5vw 1rem 2vw;
 }
 
 .nav,
@@ -109,6 +109,17 @@ footer a,
 	flex-grow: 1;
 }
 
+@media screen and (max-width: 900px){
+	.videlarge{
+		display: none;
+	}
+	footer >article{
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+
+	}
+}
 /*******************************/
 /*       Vidéo.mp4       */
 /*******************************/
@@ -116,7 +127,7 @@ footer a,
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
+	width: 100%;
 	aspect-ratio: 16/9;
 }
 

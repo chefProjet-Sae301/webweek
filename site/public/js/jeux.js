@@ -6,10 +6,8 @@ function load() {
     menus.forEach((menu, index) => {
         // Ajout d'un écouteur d'événements au clic pour chaque élément de menu
         menu.addEventListener('click', () => {
-            contenus.forEach(contenu => contenu.classList.remove('visible'));
-            menus.forEach(menu => menu.classList.remove('visible'));
-            contenus[index].classList.add('visible');
-            menu.classList.add('visible');
+            contenus[index].classList.toggle('visible');
+            menu.classList.toggle('visible');
         });
     });
 

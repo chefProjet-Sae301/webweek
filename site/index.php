@@ -82,7 +82,11 @@ $equipes = $equipeController->Classement();
     <main>
         <!-- Ajout de la vidéo chnager la vidéo  -->
         <div id="video-container">
-           <iframe width="100%" src="https://www.youtube.com/embed/F-kkh1VJ16Q?si=ogrb8VmKRLL33KE3?autoplay=1&cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="100%"
+                src="https://www.youtube.com/embed/F-kkh1VJ16Q?si=ogrb8VmKRLL33KE3?autoplay=1&cc_load_policy=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
         <div class="container-tab">
             <div class="tab-container">
@@ -212,18 +216,23 @@ $equipes = $equipeController->Classement();
     </main>
     <footer>
         <article>
-            <a href="https://www.facebook.com/LeTempsDesChimeres/"><img src="public/php/commun/facebook.png"
-                    height="20px" alt="réseau social Facebook de l'association"></a>
-            <a href="https://www.instagram.com/letempsdeschimeres43/"><img src="public/php/commun/instagram.png"
-                    height="20px" alt="réseau social Instagram de l'association"></a>
-            <a href="https://discord.gg/yQqnfw9A4X"><img src="public/php/commun/discord.png" height="20px"
-                    alt="réseau social Discord de l'association"></a>
+            <span>
+                <a href="https://www.facebook.com/LeTempsDesChimeres/"><img src="public/php/commun/facebook.png"
+                        height="20px" alt="réseau social Facebook de l'association"></a>
+                <a href="https://www.instagram.com/letempsdeschimeres43/"><img src="public/php/commun/instagram.png"
+                        height="20px" alt="réseau social Instagram de l'association"></a>
+                <a href="https://discord.gg/yQqnfw9A4X"><img src="public/php/commun/discord.png" height="20px"
+                        alt="réseau social Discord de l'association"></a>
+            </span>
             <div class="videlarge"></div>
-            <a href="public/php/plan-du-site.php">Plan du site</a>
-            <a href="public/php/mentions.php">Mentions Légales</a>
+            <span>
+
+                <a href="public/php/plan-du-site.php">Plan du site</a>
+                <a href="public/php/mentions.php">Mentions Légales</a>
+            </span>
+
         </article>
     </footer>
-
 </body>
 
 </html>
