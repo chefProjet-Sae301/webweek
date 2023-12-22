@@ -1007,9 +1007,9 @@ input[type="checkbox"]:hover {
 }
 
 #tableJeux .contenu>img {
-	background-color: aqua;
 	max-width: 100%;
 	aspect-ratio: 4/3;
+	object-fit: cover;
 }
 
 #tableJeux .contenu.visible {
