@@ -10,7 +10,7 @@ class Equipe
     
     public $joueurs = [];
 
-    function __construct(int $numeroEquipe, int $score = 0, bool $isTryHard)
+    function __construct(int $numeroEquipe,  bool $isTryHard, int $score = 0)
     {
         $this->numeroEquipe = $numeroEquipe;
         $this->score = $score;

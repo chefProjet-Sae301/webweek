@@ -31,6 +31,11 @@ h1 {
   text-transform: uppercase;
 }
 
+h1, h2, h3{
+	font-family: 'insanibu';
+	color: var(--bleu-fonce);
+}
+
 h1::before{
   content: url('../img/corneL.webp');
   display: inline-block;
@@ -41,6 +46,12 @@ h1::after{
   content: url('../img/corneD.webp');
   display: inline-block;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+	h1::before, h1::after{
+		display: none;
+	}
 }
 
 a {
@@ -105,7 +116,8 @@ footer a,
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	width: 100vw;
+	aspect-ratio: 16/9;
 }
 
 #video-container > * {
@@ -118,7 +130,7 @@ footer a,
 /*******************************/
 .container-tab {
 	display: flex;
-
+	align-items: center;
 }
 
 .tab-container {
@@ -197,7 +209,7 @@ footer a,
 }
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.tab-container {
 		padding: 50px 0 0 0;
 		margin-top: 50px;
@@ -233,7 +245,7 @@ footer a,
 }
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.image-container-tab {
 		padding: 0px;
 		display: flex;
@@ -281,6 +293,8 @@ footer a,
 	right: 0;
 	filter: drop-shadow(0 10px 10px #000);
 	z-index: 0;
+	width: 10vw;
+	background-size: contain;
 }
 
 .image-container-bj {
@@ -328,7 +342,7 @@ footer a,
 }
 
 /* Media Queries */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.flex-container {
 		flex-direction: column;
 		margin-top: 10vw;
@@ -336,16 +350,26 @@ footer a,
 
 	.image-container-bj,
 	.text-container-bj {
-		width: 80vw;
+		position: relative;
+		/*width: 80vw;*/
 		margin: 0;
 		padding: 20px;
-    z-index: 1;
+    	z-index: 1;
+	}
+
+	.text-container-bj{
+		width: 75vw;
 	}
 
 	.image-container-bj img {
 		width: 80vw;
 		margin: 0;
 		max-width: none;
+		z-index: 10;
+	}
+	.flex-container::after {
+		z-index:1;
+		width: 20vw;
 	}
 }
 
@@ -443,7 +467,7 @@ footer a,
 	height: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 	#association-partie {
 		display: flex;
 		flex-direction: column;
@@ -565,6 +589,11 @@ footer a,
 	margin: 4em 20vw;
 }
 
+#association-partie img{
+	object-fit: cover;
+	height: 40vh;
+}
+
 #association-partie article {
 	display: flex;
 	flex-direction: column;
@@ -581,6 +610,7 @@ footer a,
 
 section img {
 	height: 40vh;
+	width: auto;
 }
 
 #association-membres {
@@ -607,6 +637,7 @@ section img {
 	gap: 5%;
 	margin: 4em 20vw;
 	align-items: center;
+	row-gap: 2rem;
 }
 
 .img-texte article {
@@ -672,9 +703,13 @@ section img {
 	}
 
 	section img {
-		height: 35vh;
+		width: 100vw;
+		height: auto;
 	}
-
+	#association-partie img{
+		height: 40vh;
+		width: auto;
+	}
 	.ligne-membres {
 		flex-direction: column;
 		align-items: center;

@@ -20,8 +20,8 @@ class EquipeController
         foreach ($results as $result) {
             $equipe = new \Models\Equipe(
                 $result['NUMEROEQUIPE'],
-                $result['SCORE'],
                 $result['ISTRYHARD'],
+                $result['SCORE'],
             );
             $joueurs = $joueursController->GetJoueurByEquipe($result['NUMEROEQUIPE']);
             foreach ($joueurs as $joueur) {

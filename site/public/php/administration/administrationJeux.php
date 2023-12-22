@@ -26,14 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
 	$sizeImg = $_FILES['imgJeu']['size'];
 	$errorImg = $_FILES['imgJeu']['error'];
 	$typeImg = $_FILES['imgJeu']['type'];
-	move_uploaded_file($tmpNameImg, '../../img/' . $nameImg);
+	move_uploaded_file($tmpNameImg, '../../img/jeux/pc/' . $nameImg);
 
 	if ($UorD == "supprimer") {
 		$jeuController->DeleteJeu($jeuId);
+		
 		header("Location: $_SERVER[PHP_SELF]");
 		exit;
 	} else if ($UorD == "modifier") {
-		$jeuController->UpdateJeu($jeuId, $nomJeu, $description, '../../img/' . $nameImg);
+		$jeuController->UpdateJeu($jeuId, $nomJeu, $description, 'public/img/jeux/pc' . $nameImg);
 		header("Location: $_SERVER[PHP_SELF]");
 		exit;
 	}
@@ -50,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['creer'])) {
 	$C_sizeImg = $_FILES['C_imgJeu']['size'];
 	$C_errorImg = $_FILES['C_imgJeu']['error'];
 	$C_typeImg = $_FILES['C_imgJeu']['type'];
-	move_uploaded_file($C_tmpNameImg, '../../img/' . $C_nameImg);
+	move_uploaded_file($C_tmpNameImg, '../../img/jeux/pc/' . $C_nameImg);
 
-	$jeuController->CreateJeu($C_nomJeu, $C_description, '../../img/' . $C_nameImg);
+	$jeuController->CreateJeu($C_nomJeu, $C_description, 'public/img/jeux/pc/' . $C_nameImg);
 	header("Location: $_SERVER[PHP_SELF]");
 	exit;
 }

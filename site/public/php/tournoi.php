@@ -61,7 +61,7 @@ $equipes = $equipeController->Classement();
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-6 col-lg-6 mb-3 justify-content-center d-none d-sm-flex">
+				<div class="col-sm-6 col-md-6 col-lg-6 d-flex mb-3 justify-content-center">
 					<div class="card" style="width: 20rem;">
 						<img src="../img/tournoi/tryhard.webp" class="card-img-top" alt="...">
 						<div class="card-body">
