@@ -1,5 +1,6 @@
 <?php
 require('../../vendor/autoload.php');
+
 use Controllers\EquipeController;
 
 $equipeController = new EquipeController();
@@ -13,13 +14,10 @@ $equipes = $equipeController->Classement();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="../img/favicon.ico"/>
+	<link rel="icon" href="../img/favicon.ico" />
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
 
 
@@ -31,7 +29,7 @@ $equipes = $equipeController->Classement();
 <body>
 	<?php
 	include("commun/header.php")
-		?>
+	?>
 
 	<section class="debut-tournoi">
 		<h1>Tournoi</h1>
@@ -102,9 +100,7 @@ $equipes = $equipeController->Classement();
 		</span>
 		<span class="form2">
 			<svg viewBox="0 0 212 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M2.63201 -3.04474e-06C-23.7714 155.401 155.846 236.27 212 191.923L212 1.52588e-05L2.63201 -3.04474e-06Z"
-					fill="#233560" />
+				<path d="M2.63201 -3.04474e-06C-23.7714 155.401 155.846 236.27 212 191.923L212 1.52588e-05L2.63201 -3.04474e-06Z" fill="#233560" />
 			</svg>
 
 		</span>
@@ -147,8 +143,8 @@ $equipes = $equipeController->Classement();
 							</tr>
 						<?php } ?>
 					</table>
-				<span>
-			</span>
+					<span>
+					</span>
 
 		</div>
 	</section>
@@ -156,16 +152,13 @@ $equipes = $equipeController->Classement();
 	<section class="debut-tournoi">
 		<h1>Le Lieu</h1>
 		<p class="tournoi-text">Rendez-vous le 14-15 Décembre 2024 au Saint-Pierre Cardinal</p>
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1676.199485832484!2d3.8863638745178877!3d45.04481037015716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa544610943b%3A0xba823cb3246ef30a!2sCentre%20Pierre%20Cardinal!5e0!3m2!1sfr!2sfr!4v1703146850092!5m2!1sfr!2sfr"
-			width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1676.199485832484!2d3.8863638745178877!3d45.04481037015716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5fa544610943b%3A0xba823cb3246ef30a!2sCentre%20Pierre%20Cardinal!5e0!3m2!1sfr!2sfr!4v1703146850092!5m2!1sfr!2sfr" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</section>
 
 
 	<?php
 	include("commun/footer.php")
-		?>
+	?>
 </body>
 
 </html>

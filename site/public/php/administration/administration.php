@@ -7,8 +7,8 @@ session_start();
 
 // Vérification de l'authentification de l'utilisateur
 if (!(isset($_SESSION["login"]) && isset($_SESSION["mdp"]))) {
-    header('Location: login.php');
-    exit();
+	header('Location: login.php');
+	exit();
 }
 
 $equipeController = new EquipeController();
@@ -17,22 +17,22 @@ $equipes = $equipeController->GetEquipes();
 // Gestion des actions POST
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['deleteEquipe'])) {
-    $numeroEquipe = $_POST['deleteEquipe'];
+	$numeroEquipe = $_POST['deleteEquipe'];
 
-    
-    $equipeController->DeleteEquipe($numeroEquipe);
 
-    // Redirection vers la même page après la suppression
-    header("Location: {$_SERVER['PHP_SELF']}");
-    exit();
+	$equipeController->DeleteEquipe($numeroEquipe);
+
+	// Redirection vers la même page après la suppression
+	header("Location: {$_SERVER['PHP_SELF']}");
+	exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
-    // Déconnexion de l'utilisateur
-    session_unset();
-    session_destroy();
-    header('Location: login.php'); // Redirection vers la page de connexion après la déconnexion
-    exit();
+	// Déconnexion de l'utilisateur
+	session_unset();
+	session_destroy();
+	header('Location: login.php'); // Redirection vers la page de connexion après la déconnexion
+	exit();
 }
 ?>
 
@@ -162,3 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 
 		</table>
 	</div>
+
+</body>
+
+</html>

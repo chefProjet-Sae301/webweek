@@ -97,3 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 
 		</table>
 	</div>
+
+</body>
+
+</html>

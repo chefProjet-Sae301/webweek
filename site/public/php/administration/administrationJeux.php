@@ -1,6 +1,8 @@
 <?php
 require('../../../vendor/autoload.php');
+
 use Controllers\JeuController;
+
 session_start();
 
 // Vérification de l'authentification de l'utilisateur
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['modifierSupprimer']))
 
 	if ($UorD == "supprimer") {
 		$jeuController->DeleteJeu($jeuId);
-		
+
 		header("Location: $_SERVER[PHP_SELF]");
 		exit;
 	} else if ($UorD == "modifier") {
@@ -163,3 +165,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['logout'])) {
 	</div>
 
 </body>
+
+</html>

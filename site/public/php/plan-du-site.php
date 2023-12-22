@@ -9,7 +9,7 @@ require('../../vendor/autoload.php');
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="icon" href="../img/favicon.ico"/>
+	<link rel="icon" href="../img/favicon.ico" />
 
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -28,7 +28,7 @@ require('../../vendor/autoload.php');
 	?>
 
 	<section id="liste">
-		
+
 		<h1>Liste des pages</h1>
 		<ul>
 			<li><a href="../../index.php">Accueil</a></li>

@@ -6,13 +6,15 @@
 	--color-text-black: rgb(0 0 0);
 	--color-text-white: rgb(255 255 255);
 }
+
 @font-face {
-  font-family: 'insanibu';
-  src: url('../fonts/Insanibu.ttf') format('truetype');
+	font-family: 'insanibu';
+	src: url('../fonts/Insanibu.ttf') format('truetype');
 }
+
 @font-face {
-  font-family: 'happyChristmas';
-  src: url('../fonts/PWHappyChristmas.ttf') format('truetype');
+	font-family: 'happyChristmas';
+	src: url('../fonts/PWHappyChristmas.ttf') format('truetype');
 }
 
 html,
@@ -28,28 +30,32 @@ h1 {
 	color: var(--bleu-fonce);
 	text-align: center;
 	font-size: xx-large;
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
 	font-family: 'insanibu';
 	color: var(--bleu-fonce);
 }
 
-h1::before{
-  content: url('../img/corneL.webp');
-  display: inline-block;
-  margin-right: 10px;
+h1::before {
+	content: url('../img/corneL.webp');
+	display: inline-block;
+	margin-right: 10px;
 }
 
-h1::after{
-  content: url('../img/corneD.webp');
-  display: inline-block;
-  margin-left: 10px;
+h1::after {
+	content: url('../img/corneD.webp');
+	display: inline-block;
+	margin-left: 10px;
 }
 
 @media screen and (max-width: 900px) {
-	h1::before, h1::after{
+
+	h1::before,
+	h1::after {
 		display: none;
 	}
 }
@@ -109,20 +115,26 @@ footer a,
 	flex-grow: 1;
 }
 
-@media screen and (max-width: 900px){
-	.videlarge{
+@media screen and (max-width: 900px) {
+	.videlarge {
 		display: none;
 	}
-	footer >article{
+
+	footer>article {
 		display: flex;
 		flex-direction: column;
 		row-gap: 2rem;
 
 	}
 }
-/*******************************/
-/*       Vidéo.mp4       */
-/*******************************/
+
+/******************************/
+/*        PAGE ACCUEIL        */
+/******************************/
+
+
+/* VIDEO */
+
 #video-container {
 	display: flex;
 	justify-content: center;
@@ -131,14 +143,13 @@ footer a,
 	aspect-ratio: 16/9;
 }
 
-#video-container > * {
+#video-container>* {
 	width: 100%;
 	height: 100%;
 }
 
-/*******************************/
-/*       Tab        */
-/*******************************/
+/* TAB */
+
 .container-tab {
 	display: flex;
 	align-items: center;
@@ -156,7 +167,6 @@ footer a,
 	background-color: var(--bleu-fonce);
 }
 
-/* Style the buttons inside the tab */
 .table-acceuil button {
 	background-color: inherit;
 	float: left;
@@ -169,17 +179,14 @@ footer a,
 	color: var(--color-text-white);
 }
 
-/* Change background color of buttons on hover */
 .table-acceuil button:hover {
 	background-color: var(--bleu-clair);
 }
 
-/* Create an active/current tablink class */
 .table-acceuil button.active {
 	background-color: var(--bleu-clair);
 }
 
-/* Style the tab content */
 .tabcontent {
 	border-radius: 0 0 10px 10px;
 	height: 52vh;
@@ -198,7 +205,6 @@ footer a,
 	padding: 50px;
 }
 
-/* Fade in tabs */
 @-webkit-keyframes fadeEffect {
 	from {
 		opacity: 0;
@@ -219,7 +225,6 @@ footer a,
 	}
 }
 
-/* Media Queries */
 @media screen and (max-width: 900px) {
 	.tab-container {
 		padding: 50px 0 0 0;
@@ -236,26 +241,20 @@ footer a,
 	.container-tab {
 		align-items: center;
 	}
-
 }
 
-/*******************************/
-/*       images tab        */
-/*******************************/
+/* IMAGE A COTE DU TAB */
+
 .image-container-tab {
 	flex: 50%;
-	/* L'image prend 50% de la largeur */
 	padding: 50px;
 }
 
-/* Style the image */
 .image-container-tab img {
 	width: 75%;
 	border-radius: 10px;
-
 }
 
-/* Media Queries */
 @media screen and (max-width: 900px) {
 	.image-container-tab {
 		padding: 0px;
@@ -268,14 +267,13 @@ footer a,
 		margin-top: 10vw;
 	}
 
-  .image-container-tab {
-    display: none;
-}
+	.image-container-tab {
+		display: none;
+	}
 }
 
-/**************************************/
-/*       section bourse au jeux       */
-/**************************************/
+/* SECTION BOURSE DE JEUX */
+
 .flex-container {
 	display: flex;
 	align-items: center;
@@ -310,7 +308,6 @@ footer a,
 
 .image-container-bj {
 	flex: 50%;
-	/* L'image prend 50% de la largeur */
 	padding: 50px;
 }
 
@@ -352,7 +349,6 @@ footer a,
 	background-color: #E8E8E8;
 }
 
-/* Media Queries */
 @media screen and (max-width: 900px) {
 	.flex-container {
 		flex-direction: column;
@@ -362,13 +358,12 @@ footer a,
 	.image-container-bj,
 	.text-container-bj {
 		position: relative;
-		/*width: 80vw;*/
 		margin: 0;
 		padding: 20px;
-    	z-index: 1;
+		z-index: 1;
 	}
 
-	.text-container-bj{
+	.text-container-bj {
 		width: 75vw;
 	}
 
@@ -378,15 +373,15 @@ footer a,
 		max-width: none;
 		z-index: 10;
 	}
+
 	.flex-container::after {
-		z-index:1;
+		z-index: 1;
 		width: 20vw;
 	}
 }
 
-/**************************************/
-/*    section tournoi 1000 sabords   */
-/**************************************/
+/* SECTION TOURNOI */
+
 .flex-container-tournoi {
 	display: flex;
 	justify-content: space-between;
@@ -432,7 +427,6 @@ footer a,
 	color: var(--color-text-black)
 }
 
-/* Media Queries */
 @media screen and (max-width: 600px) {
 	.flex-container-tournoi {
 		flex-direction: column-reverse;
@@ -455,8 +449,9 @@ footer a,
 }
 
 /************************************/
-/*                 Carousels        */
+/*             CAROUSEL             */
 /************************************/
+
 #association-galerie {
 	background-color: var(--bleu-clair);
 	display: flex;
@@ -524,24 +519,25 @@ footer a,
 
 
 /**************************************/
-/*                 Tableau          */
+/*             CLASSEMENT             */
 /**************************************/
+
 #classement_index {
-  padding: 3rem 0;
-  text-align: center;
+	padding: 3rem 0;
+	text-align: center;
 }
 
-#classement_index .tables{
-  display: flex;
-  justify-content: space-evenly;
+#classement_index .tables {
+	display: flex;
+	justify-content: space-evenly;
 }
 
-#classement_index .classementTables tr{
-  background-color: #f9f9f9 !important;
+#classement_index .classementTables tr {
+	background-color: #f9f9f9 !important;
 }
 
-#classement_index h3{
-  margin-top: 2rem;
+#classement_index h3 {
+	margin-top: 2rem;
 }
 
 .boutton-tournoi2 {
@@ -564,22 +560,20 @@ footer a,
 	color: var(--color-text-black)
 }
 
-/* Media Queries */
 @media (max-width: 900px) {
-  #classement_index .tables{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-  }
+	#classement_index .tables {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	}
 }
 
 
 /**************************************/
-/*                 Responsive          */
+/*          RESPONSIF GLOBAL          */
 /**************************************/
 
-/* Styles pour les écrans de taille moyenne et grande */
 @media screen and (max-width: 600px) {
 
 	.flex-container,
@@ -590,9 +584,9 @@ footer a,
 	}
 }
 
-/*******************************/
-/*         ASSOCIATION         */
-/*******************************/
+/*************************************/
+/*            ASSOCIATION            */
+/*************************************/
 
 #association-partie {
 	display: flex;
@@ -600,7 +594,7 @@ footer a,
 	margin: 4em 20vw;
 }
 
-#association-partie img{
+#association-partie img {
 	object-fit: cover;
 	height: 40vh;
 }
@@ -630,6 +624,8 @@ section img {
 	display: flex;
 	flex-direction: column;
 }
+
+/* LISTE DES MEMBRES */
 
 .img-membres {
 	width: 9vw;
@@ -717,10 +713,12 @@ section img {
 		width: 100vw;
 		height: auto;
 	}
-	#association-partie img{
+
+	#association-partie img {
 		height: 40vh;
 		width: auto;
 	}
+
 	.ligne-membres {
 		flex-direction: column;
 		align-items: center;
@@ -745,16 +743,16 @@ section img {
 	}
 }
 
-/********************************/
-/*             FORM             */
-/********************************/
+/************************************/
+/*               FORM               */
+/************************************/
 
 #formulaire {
 	background-color: var(--bleu-clair);
 	padding: 5vw 0;
 }
 
-/* admin */
+/* Form Admin */
 #formulaire-administration {
 	background-color: var(--bleu-clair);
 	padding: 8vw 0;
@@ -766,7 +764,7 @@ section img {
 	text-align: center;
 }
 
-/* fin admin */
+/* Form Admin */
 
 form {
 	background-color: var(--color-text-white);
@@ -928,99 +926,110 @@ input[type="checkbox"]:hover {
 	border: none !important;
 }
 
-#classement_equipes{
-  background-color: var(--bleu-clair);
-  text-align: center;
-  padding: 2rem;
-  color: var(--bleu-fonce);
-  position: relative;
+#classement_equipes {
+	background-color: var(--bleu-clair);
+	text-align: center;
+	padding: 2rem;
+	color: var(--bleu-fonce);
+	position: relative;
 }
 
-#classement_equipes .tables{
-  display: flex;
-  justify-content: space-evenly;
-  
-}
-#classement_equipes h3{
-  color: var(--color-text-white);
-  font-family: 'insanibu';
-  margin-top: 2rem;
-}
-.classementTables{
-  width: 35vw;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
+#classement_equipes .tables {
+	display: flex;
+	justify-content: space-evenly;
+
 }
 
-.classementTables, .classementTables tr{
-  background-color: var(--color-text-white);
-  
+#classement_equipes h3 {
+	color: var(--color-text-white);
+	font-family: 'insanibu';
+	margin-top: 2rem;
 }
 
-.classementTables tr{
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px inset;
+.classementTables {
+	width: 35vw;
+	border-radius: 10px;
+	overflow: hidden;
+	text-align: center;
 }
 
-.classementTables td{
-  padding: 0.5rem;
-  width: calc(35vw /3);
-}
-.classementTables .numEquipe{
-  font-family: 'happyChristmas';
-  font-size: xx-large;
+.classementTables,
+.classementTables tr {
+	background-color: var(--color-text-white);
+
 }
 
-.classementTables .num1{
-   color: #d6a529;
+.classementTables tr {
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px inset;
 }
 
-.classementTables .num2{
-  color: #858585;
+.classementTables td {
+	padding: 0.5rem;
+	width: calc(35vw /3);
 }
 
-.classementTables .num3{
-  color: #c35c3b;
-}
-#classement_equipes div{
-  position: relative;
-  z-index: 4;
-}
-#classement_equipes .form1{
-  width: 15vw;
-  position: absolute;
-  left:0;
-  bottom: 0;
-  z-index: 3;
+.classementTables .numEquipe {
+	font-family: 'happyChristmas';
+	font-size: xx-large;
 }
 
-#classement_equipes .form2{
-  width: 15vw ;
-  position: absolute;
-  right:0;
-  top: 0;
-  z-index: 3;
+.classementTables .num1 {
+	color: #d6a529;
 }
+
+.classementTables .num2 {
+	color: #858585;
+}
+
+.classementTables .num3 {
+	color: #c35c3b;
+}
+
+#classement_equipes div {
+	position: relative;
+	z-index: 4;
+}
+
+#classement_equipes .form1 {
+	width: 15vw;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+}
+
+#classement_equipes .form2 {
+	width: 15vw;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 3;
+}
+
 @media (max-width: 900px) {
-  #classement_equipes .tables{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  #classement_equipes .form2, #classement_equipes .form1{
-    width: 30vw ;
-  }
-  .classementTables{
-    width: 80vw;
-  }
+	#classement_equipes .tables {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	#classement_equipes .form2,
+	#classement_equipes .form1 {
+		width: 30vw;
+	}
+
+	.classementTables {
+		width: 80vw;
+	}
 }
 
 /********************************/
 /*             JEUX             */
 /********************************/
-.jeuxPageTitle{
-  padding-top: 25px;
+
+.jeuxPageTitle {
+	padding-top: 25px;
 }
 
 #tableJeux,
@@ -1150,8 +1159,6 @@ input[type="checkbox"]:hover {
 		width: 80vw;
 	}
 }
-
-
 
 /********************************/
 /*       MENTIONS LEGALES       */
