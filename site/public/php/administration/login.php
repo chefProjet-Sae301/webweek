@@ -46,7 +46,7 @@ if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
         <!-- Nav > lg -->
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <span>
-                <img src="public/php/commun/logo.png" alt="Logo Noël des Chimères" height="60px">
+                <img src="../commun/logo.png" alt="Logo Noël des Chimères" height="60px">
             </span>
         </a>
         <ul class="nav nav-pills d-none d-lg-flex align-items-center custom-nav">
@@ -77,7 +77,7 @@ if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
                         style="color:#c61c1c;">Tournoi</a></li>
                 <li class="nav-item"><a href="../jeux.php" class="nav-link text-white"
                         style="color:#c61c1c;">Jeux</a></li>
-                <li class="nav-item"><a href="..//formulaire.php" class="nav-link text-white"
+                <li class="nav-item"><a href="../formulaire.php" class="nav-link text-white"
                         style="color:#c61c1c;">Inscription</a></li>
             </ul>
         </div>
@@ -104,15 +104,15 @@ if ((isset($_POST["login"]) && isset($_POST["mdp"]))) {
     </section>
 
     <footer>
-        <article>
-            <a href="https://www.facebook.com/LeTempsDesChimeres/"><img src="../commun/facebook.png" height="20px" alt="Réseau social Facebook de l'association"></a>
-            <a href="https://www.instagram.com/letempsdeschimeres43/"><img src="../commun/instagram.png" height="20px" alt="Réseau social Instagram de l'association"></a>
-            <a href="https://discord.gg/yQqnfw9A4X"><img src="../commun/discord.png" height="20px" alt="Réseau social Discord de l'association"></a>
-            <div class="videlarge"></div>
-            <a href="index.php">Plan du site</a>
-            <a href="index.php">Mentions Légales</a>
-        </article>
-    </footer>
+	<article>
+		<a href="https://www.facebook.com/LeTempsDesChimeres/"><img src="../commun/facebook.png" height="20px" alt="réseau social Facebook de l'association"></a>
+		<a href="https://www.instagram.com/letempsdeschimeres43/"><img src="../commun/instagram.png" height="20px" alt="réseau social Instagram de l'association"></a>
+		<a href="https://discord.gg/yQqnfw9A4X"><img src="../commun/discord.png" height="20px" alt="réseau social Discord de l'association"></a>
+		<div class="videlarge"></div>
+		<a href="../plan-du-site.php">Plan du site</a>
+		<a href="../mentions.php">Mentions Légales</a>
+	</article>
+</footer>
 </body>
 
 </html>
