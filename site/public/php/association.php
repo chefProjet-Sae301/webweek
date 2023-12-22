@@ -23,7 +23,7 @@ require('../../vendor/autoload.php');
 
 
 	<link type="text/css" media="all" rel="stylesheet" href="../css/styles.css">
-	<script src="../js/caroussel.js"></script>
+	<script src="../js/carousel.js"></script>
 
 	<title>Association</title>
 </head>
